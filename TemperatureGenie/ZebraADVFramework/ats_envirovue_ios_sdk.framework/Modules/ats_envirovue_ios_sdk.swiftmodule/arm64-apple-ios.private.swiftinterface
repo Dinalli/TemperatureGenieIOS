@@ -1,0 +1,73 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
+// swift-module-flags: -target arm64-apple-ios15.6 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name ats_envirovue_ios_sdk
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_exported import ats_envirovue_ios_sdk
+public enum AlarmStatus : Swift.Int {
+  case inactive
+  case active
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum SensorStatus : Swift.Int {
+  case notPresent
+  case stopped
+  case started
+  case waiting
+  case startedAndUploaded
+  case stoppedAndUploaded
+  case reserved6
+  case reserved7
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class ZebraIllegalArgumentException : Swift.Error {
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class DataUtils {
+  @objc deinit
+}
+public class AdvertisingInfo {
+  public init(advertisingData: Foundation.Data) throws
+  public func getType() -> Swift.Int
+  public func getBatteryStatus() -> Swift.Int
+  public func getAdvertisedSystemId() -> Swift.String
+  public func getSensorStatus() -> Swift.Int
+  public func getAdvertisingData() -> Foundation.Data
+  public func getTemperatureSensorStatus() -> ats_envirovue_ios_sdk.SensorStatus
+  public func getHumiditySensorStatus() -> ats_envirovue_ios_sdk.SensorStatus
+  public func getPressureSensorStatus() -> ats_envirovue_ios_sdk.SensorStatus
+  public func getLightSensorStatus() -> ats_envirovue_ios_sdk.SensorStatus
+  public func getInertialSensorStatus() -> ats_envirovue_ios_sdk.SensorStatus
+  public func getAlarmStatus() -> ats_envirovue_ios_sdk.AlarmStatus
+  public func getNumTemperatureSamples() -> Swift.Int
+  public func getNumHumiditySamples() -> Swift.Int
+  public func getNumPressureSamples() -> Swift.Int
+  public func getNumLightSamples() -> Swift.Int
+  public func getNumInertialSamples() -> Swift.Int
+  public func getLastTemperatureSampled() -> Swift.Int
+  public var description: Swift.String {
+    get
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class ZebraSdkUtilities {
+  public static func getAdvertisingInfo(data: Foundation.Data) throws -> ats_envirovue_ios_sdk.AdvertisingInfo
+  @objc deinit
+}
+extension ats_envirovue_ios_sdk.AlarmStatus : Swift.Equatable {}
+extension ats_envirovue_ios_sdk.AlarmStatus : Swift.Hashable {}
+extension ats_envirovue_ios_sdk.AlarmStatus : Swift.RawRepresentable {}
+extension ats_envirovue_ios_sdk.SensorStatus : Swift.Equatable {}
+extension ats_envirovue_ios_sdk.SensorStatus : Swift.Hashable {}
+extension ats_envirovue_ios_sdk.SensorStatus : Swift.RawRepresentable {}

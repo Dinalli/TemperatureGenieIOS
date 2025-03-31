@@ -6,55 +6,47 @@
 //
 
 import SwiftUI
-import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
-
+    @StateObject var authenticationHelper = AuthenticationHelper()
+    
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
+        if !authenticationHelper.isAuthenticated {
+            NavigationView {
+                GeometryReader { geo in
+                    ScrollView {
+                        VStack {
+                            Spacer()
+                            VStack {
+                                Spacer()
+                                HStack {
+                                    Image("TempGenieLogo").resizable().frame(width: 232, height: 30, alignment: .center)
+                                }
+                                HStack {
+                                    LoginView().frame(height: 350, alignment: .center)
+                                }
+                                Spacer()
+                                HStack{
+                                    Text("v\(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "-")")
+                                        .foregroundColor(Color("GenieLightBlue"))
+                                        .font(.custom("poppins-medium", size: 12))
+                                }
+                            }
+                        }.frame(height: geo.size.height).padding()
+                    }.background(Color("GenieBackground"))
                 }
-                .onDelete(perform: deleteItems)
-            }
-#if os(macOS)
-            .navigationSplitViewColumnWidth(min: 180, ideal: 200)
-#endif
-            .toolbar {
-#if os(iOS)
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
+            }.navigationViewStyle(.stack)
+        } else {
+            VStack {
+                SensorList().frame(maxWidth: .infinity).onAppear {
+                    /// Request Push Authorization
+                    let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+                    UNUserNotificationCenter.current().requestAuthorization(
+                        options: authOptions,
+                        completionHandler: {_, _ in })
+                    UIApplication.shared.registerForRemoteNotifications()
+                    UIApplication.shared.applicationIconBadgeNumber = 0
                 }
-#endif
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-        } detail: {
-            Text("Select an item")
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
             }
         }
     }
@@ -62,5 +54,4 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
 }
