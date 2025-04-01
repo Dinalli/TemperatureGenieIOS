@@ -10,8 +10,16 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var authenticationHelper = AuthenticationHelper()
     
+    @State var showSplash = true
+    
     var body: some View {
-        if !authenticationHelper.isAuthenticated {
+        if showSplash {
+            Splash().onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                    showSplash = false
+                }
+            }
+        } else if !authenticationHelper.isAuthenticated {
             NavigationView {
                 GeometryReader { geo in
                     ScrollView {
@@ -57,3 +65,4 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+
