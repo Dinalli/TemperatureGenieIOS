@@ -14,8 +14,8 @@ public struct LoginView: View {
     
     @State private var showPassword = false
     
-    @State private var username: String = ""
-    @State private var password: String = ""
+    @State private var username: String = "andy@dinalli.co.uk"
+    @State private var password: String = "16Fgh7!16fgh7"
     
     @State var showUsernameForgot: Bool = false
     @State var showPasswordForgot: Bool = false

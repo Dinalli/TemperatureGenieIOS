@@ -571,7 +571,7 @@
 		35B086672D92FFDD00D7314C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				API_PATH = "https://demo-api.barcodegenie.co.uk\n";
+				API_PATH = "https://demo-api.barcodegenie.co.uk";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TemperatureGenie/TemperatureGenie.entitlements;

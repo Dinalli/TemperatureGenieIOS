@@ -24,6 +24,7 @@ struct ContentView: View {
                                 }
                                 HStack {
                                     LoginView().frame(height: 350, alignment: .center)
+                                        .environmentObject(authenticationHelper)
                                 }
                                 Spacer()
                                 HStack{
@@ -47,6 +48,7 @@ struct ContentView: View {
                     UIApplication.shared.registerForRemoteNotifications()
                     UIApplication.shared.applicationIconBadgeNumber = 0
                 }
+                .environmentObject(authenticationHelper)
             }
         }
     }

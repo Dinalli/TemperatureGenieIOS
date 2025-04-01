@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "1C172792-5089-475F-BB65-9E5A54446334"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6FFDEB3F-1C9F-4925-BDD0-9E0107B21D78"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TemperatureGenie/Login/ViewModel/LoginViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "loginWithUsernameAndPassword(username:password:authenticationHelper:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7A23FFEC-3D5E-494E-8BB6-E11C598D7DFE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TemperatureGenie/Login/API/LoginAPI.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "loginUser(username:password:firebaseToken:session:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "53F4168C-5C51-4BB0-AE9C-F7417A77C6A1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TemperatureGenie/Login/API/LoginAPI.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "loginUser(username:password:firebaseToken:session:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "53F4168C-5C51-4BB0-AE9C-F7417A77C6A1 - 2314d9094029cc88"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Foundation.Data, __C.NSURLResponse) -&gt; Combine.AnyPublisher&lt;TemperatureGenie.LoginToken, TemperatureGenie.APIError&gt; in TemperatureGenie.LoginAPI.loginUser(username: Swift.String, password: Swift.String, firebaseToken: Swift.String, session: __C.NSURLSession) -&gt; Combine.AnyPublisher&lt;TemperatureGenie.LoginToken, TemperatureGenie.APIError&gt;"
+                  moduleName = "TemperatureGenie.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrewdonnellynew/iphonedev/TemperatureGenie/TemperatureGenie/Login/API/LoginAPI.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46">
+               </Location>
+               <Location
+                  uuid = "53F4168C-5C51-4BB0-AE9C-F7417A77C6A1 - 2314d9094029cc88"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Foundation.Data, __C.NSURLResponse) -&gt; Combine.AnyPublisher&lt;TemperatureGenie.LoginToken, TemperatureGenie.APIError&gt; in TemperatureGenie.LoginAPI.loginUser(username: Swift.String, password: Swift.String, firebaseToken: Swift.String, session: __C.NSURLSession) -&gt; Combine.AnyPublisher&lt;TemperatureGenie.LoginToken, TemperatureGenie.APIError&gt;"
+                  moduleName = "TemperatureGenie.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrewdonnellynew/iphonedev/TemperatureGenie/TemperatureGenie/Login/API/LoginAPI.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "96E8D872-FEB1-4502-AB3A-0E5065CA4737"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TemperatureGenie/Login/ViewModel/LoginViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "loginWithUsernameAndPassword(username:password:authenticationHelper:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

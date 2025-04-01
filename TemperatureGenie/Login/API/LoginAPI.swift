@@ -23,7 +23,7 @@ struct LoginAPI {
         var urlRequest: URLRequest = URLRequest.init(url: downloadURL)
         urlRequest.httpMethod = "POST"
         urlRequest.setValue(applicationType, forHTTPHeaderField: contentType)
-        let parameterDictionary = ["username": username, "password": password, "firebaseToken": firebaseToken]
+        let parameterDictionary = ["username": username, "password": password, "FirebaseDeviceToken": "firebaseToken"]
         guard let httpBody = try? JSONSerialization.data(withJSONObject: parameterDictionary, options: []) else {
             return Fail(error: .errorDescription("")).eraseToAnyPublisher()
         }
@@ -41,6 +41,7 @@ struct LoginAPI {
                     return Fail(error: .unknown)
                         .eraseToAnyPublisher()
                 }
+                print(String(data: data, encoding: .utf8))
                 if (200...299).contains(response.statusCode) {
                     if let response = try? jsonDecoder.decode(LoginToken.self, from: data) {
                         return Just(response).setFailureType(to: APIError.self)

@@ -22,9 +22,11 @@ public class LoginViewModel: ObservableObject {
             .sink { res  in
                 switch res {
                     case .failure(let error):
+                    DispatchQueue.main.async {
                         self.alertMessageTitle = "Login error"
                         self.alertMessage = error.localizedDescription
                         self.showAlert = true
+                    }
                     case .finished:
                         break
                 }
