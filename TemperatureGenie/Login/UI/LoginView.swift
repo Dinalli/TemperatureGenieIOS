@@ -38,6 +38,7 @@ public struct LoginView: View {
                         Spacer()
                     }
                     TextField("Username", text: $username).autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/).font(.custom("poppins_medium", size: 17)).foregroundColor(Color("GenieBlue"))
+                        .padding()
                         .overlay(
                         RoundedRectangle(cornerRadius: 8)
                             .stroke(Color("GeniePurple"), lineWidth: 1)
@@ -50,19 +51,18 @@ public struct LoginView: View {
                     }
                     HStack {
                         if showPassword {
-                            TextField("Password", text: $password).autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/).font(.custom("poppins_medium", size: 17)).foregroundColor(Color("GenieBlue")).overlay(
-                                RoundedRectangle(cornerRadius: 8)
-                                    .stroke(Color("GeniePurple"), lineWidth: 1)
-                            )
+                            TextField("Password", text: $password).autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/).font(.custom("poppins_medium", size: 17)).foregroundColor(Color("GenieBlue"))
                         } else {
                             SecureField("Password", text: $password).autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/).autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/).foregroundColor(Color("GenieBlue"))
                         }
                         Button {
                             showPassword.toggle()
                         } label: {
-                            Image("Eye").foregroundColor(Color("GenieBlue"))
-                        }.background(Color("GenieBlue"))
-                    }.overlay(
+                            Image("Eye").renderingMode(.template).tint(Color("GenieBlue"))
+                        }
+                    }
+                    .padding()
+                    .overlay(
                         RoundedRectangle(cornerRadius: 8)
                             .stroke(Color("GeniePurple"), lineWidth: 1)
                     )

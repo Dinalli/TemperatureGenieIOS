@@ -6,6 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		353224732D9BCEBA00CD274C /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 353224722D9BCEBA00CD274C /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		353224752D9BCEBA00CD274C /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 353224742D9BCEBA00CD274C /* FirebaseCrashlytics */; };
+		353224772D9BCEBA00CD274C /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 353224762D9BCEBA00CD274C /* FirebaseInAppMessaging-Beta */; };
+		353224792D9BCEBA00CD274C /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 353224782D9BCEBA00CD274C /* FirebasePerformance */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		35B086532D92FFDD00D7314C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -92,6 +99,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				353224752D9BCEBA00CD274C /* FirebaseCrashlytics in Frameworks */,
+				353224792D9BCEBA00CD274C /* FirebasePerformance in Frameworks */,
+				353224732D9BCEBA00CD274C /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				353224772D9BCEBA00CD274C /* FirebaseInAppMessaging-Beta in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +164,10 @@
 			);
 			name = TemperatureGenie;
 			packageProductDependencies = (
+				353224722D9BCEBA00CD274C /* FirebaseAnalyticsWithoutAdIdSupport */,
+				353224742D9BCEBA00CD274C /* FirebaseCrashlytics */,
+				353224762D9BCEBA00CD274C /* FirebaseInAppMessaging-Beta */,
+				353224782D9BCEBA00CD274C /* FirebasePerformance */,
 			);
 			productName = TemperatureGenie;
 			productReference = 35B0863F2D92FFDC00D7314C /* TemperatureGenie.app */;
@@ -236,6 +251,9 @@
 			);
 			mainGroup = 35B086362D92FFDC00D7314C;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				353224712D9BCEBA00CD274C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 35B086402D92FFDC00D7314C /* Products */;
 			projectDirPath = "";
@@ -397,7 +415,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = barcodegenie.TemperatureGenie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.barcodegenie.TemperatureGenie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -602,7 +620,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = barcodegenie.TemperatureGenie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.barcodegenie.TemperatureGenie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -648,7 +666,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = barcodegenie.TemperatureGenie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.barcodegenie.TemperatureGenie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -794,6 +812,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		353224712D9BCEBA00CD274C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		353224722D9BCEBA00CD274C /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 353224712D9BCEBA00CD274C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		353224742D9BCEBA00CD274C /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 353224712D9BCEBA00CD274C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		353224762D9BCEBA00CD274C /* FirebaseInAppMessaging-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 353224712D9BCEBA00CD274C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseInAppMessaging-Beta";
+		};
+		353224782D9BCEBA00CD274C /* FirebasePerformance */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 353224712D9BCEBA00CD274C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebasePerformance;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 35B086372D92FFDC00D7314C /* Project object */;
 }
