@@ -47,7 +47,12 @@ struct DiscoveredSensorRow: View {
                 }
 
             }
-        }
+        }.frame(maxWidth: .infinity, minHeight:100, alignment: .leading)
+            .background(
+                Rectangle()
+                    .fill(Color("GenieBoxBackground"))
+            )
+            .cornerRadius(8.0)
     }
 }
 
