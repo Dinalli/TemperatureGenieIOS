@@ -25,4 +25,16 @@ public extension Date {
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         return dateFormatter.string(from: self)
     }
+    
+    func toLocale(dateFormat format: String) -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yy hh:mm:ss a"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        if let dt = dateFormatter.date(from: self.toString(dateFormat: "MM/dd/yy hh:mm:ss a")) {
+            return dt
+        } else {
+            return self
+        }
+    }
 }

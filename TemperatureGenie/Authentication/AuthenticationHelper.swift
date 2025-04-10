@@ -40,7 +40,7 @@ public class AuthenticationHelper: NSObject, ObservableObject {
         var token = ""
         do {
             passwordItems = try KeychainPasswordItem.passwordItems(forService: KeychainConfiguration.serviceName, accessGroup: KeychainConfiguration.accessGroup)
-            let accessTokenItem: [KeychainPasswordItem] = passwordItems.filter { $0.account == "token" }
+            let accessTokenItem: [KeychainPasswordItem] = passwordItems.filter { $0.account == "access_token" }
             if accessTokenItem.count > 0 {
                 token = try accessTokenItem.first!.readPassword()
             } else { return token }

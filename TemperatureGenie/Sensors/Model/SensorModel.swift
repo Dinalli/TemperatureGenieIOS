@@ -28,7 +28,6 @@ struct BLEDeviceData : Hashable {
     let advertisementData: BLEAdvertisementData;
 }
 
-
 struct BLEAdvertisementData : Hashable {
     let localName: String?
     let manufacturerData: Data?

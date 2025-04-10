@@ -9,12 +9,21 @@ import Foundation
 import ats_envirovue_ios_sdk
 import CoreBluetooth
 import SwiftUICore
+import Combine
 
 class SensorListViewModel: NSObject, ObservableObject {
-    @Published var discoveryList: [BLEDeviceData] = []
-    @Published var isLoading: Bool = false
-    
     private var centralManager: CBCentralManager?
+    private var service = SensorAPI()
+    private var cancellables = Set<AnyCancellable>()
+    
+    @Published var filteredSensors: [UserSensorResponse] = []
+    @Published var isLoading: Bool = false
+    @Published var alertMessageTitle = ""
+    @Published var alertMessage = ""
+    @Published var showAlert = false
+    
+    private var discoveryList: [BLEDeviceData] = []
+    private var discoveredUserSensors: [UserSensorResponse] = []
     
     func setUpManager()  {
         centralManager = CBCentralManager(delegate: self, queue: nil)
@@ -41,8 +50,45 @@ class SensorListViewModel: NSObject, ObservableObject {
         }
     }
     
-    func getUserSensors() -> [UserSensorResponse] {
-        return []
+    func getUserSensors(token: String) {
+        self.service.getSensorsForUser(token: token, session: URLSession.shared)
+            .subscribe(on: DispatchQueue.global(qos: .background))
+            .sink { res  in
+                switch res {
+                case .failure(let error):
+                    DispatchQueue.main.async {
+                        self.alertMessageTitle = "Get sensor error"
+                        self.alertMessage = error.localizedDescription
+                        self.showAlert = true
+                    }
+                case .finished:
+                    break
+                }
+            } receiveValue: { userSensors in
+                self.discoveredUserSensors = userSensors
+                self.updateFilteredSensors()
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func updateFilteredSensors() {
+       // val filteredSensors = discoveredSensors.flatMap { sensorId -> userSensors.filter { sensorId == it.physicalId }}
+       // filteredSensors = discoveryList.flatMap { $0.sensorId -> discoveryList.filter { sensorId == $0.physicalId }}
+        
+    // Come back to this as filtered live sensors doesnt have info needed yet
+        filteredSensors = discoveredUserSensors
+    }
+    
+    func isSensorInPausedState(sensor: UserSensorResponse) -> Bool {
+        if (sensor.alertPauseEndDateTime.isEmpty) {
+            return false
+        }
+        guard let alertPauseDate = sensor.alertPauseEndDateTime.toDate(dateFormat: "dd MM yyyy HH:mm:ss") else { return false }
+        if (alertPauseDate < Date()) {
+            return true
+        } else {
+            return false
+        }
     }
     
 }
@@ -69,6 +115,7 @@ extension SensorListViewModel: CBCentralManagerDelegate {
                 discoveryList.append(discovery)
             }
         }
+        updateFilteredSensors()
     }
 }
 
