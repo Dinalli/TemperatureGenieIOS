@@ -1,6 +1,0 @@
-framework module ats_envirovue_ios_sdk {
-  umbrella header "ats_envirovue_ios_sdk.h"
-  export *
-
-  module * { export * }
-}

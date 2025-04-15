@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import ats_envirovue_ios_sdk
+import AtsEnvirovueSdk
 import CoreBluetooth
 import SwiftUICore
 import Combine
@@ -112,6 +112,8 @@ extension SensorListViewModel: CBCentralManagerDelegate {
             if !discoveryList.contains(where: { item in
                 return item.peripheral.identifier == peripheral.identifier
             }) {
+                print("Peripheral Data \(discovery.peripheral)")
+                print("Advertisement Data \(discovery.advertisementData)")
                 discoveryList.append(discovery)
             }
         }

@@ -87,6 +87,11 @@ public class AuthenticationHelper: NSObject, ObservableObject {
         }
         return true
     }
+    
+    func logout() {
+        clearToken()
+        isAuthenticated = false
+    }
 }
 
 /// Helper class to do common calls on user defaults

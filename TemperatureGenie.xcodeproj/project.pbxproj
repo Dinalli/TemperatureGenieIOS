@@ -60,14 +60,14 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		35B086752D93017000D7314C /* Exceptions for "TemperatureGenie" folder in "Embed Frameworks" phase from "TemperatureGenie" target */ = {
+		359373F52DAE560C0003CCA2 /* Exceptions for "TemperatureGenie" folder in "Embed Frameworks" phase from "TemperatureGenie" target */ = {
 			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
 			attributesByRelativePath = {
-				ZebraADVFramework/ats_envirovue_ios_sdk.framework = (CodeSignOnCopy, RemoveHeadersOnCopy, );
+				ZebraADVFramework/AtsEnvirovueSdk.xcframework = (CodeSignOnCopy, RemoveHeadersOnCopy, );
 			};
 			buildPhase = 35B086742D93017000D7314C /* Embed Frameworks */;
 			membershipExceptions = (
-				ZebraADVFramework/ats_envirovue_ios_sdk.framework,
+				ZebraADVFramework/AtsEnvirovueSdk.xcframework,
 			);
 		};
 /* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
@@ -77,7 +77,7 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				3547A7182D95D0E200853EE0 /* Exceptions for "TemperatureGenie" folder in "TemperatureGenie" target */,
-				35B086752D93017000D7314C /* Exceptions for "TemperatureGenie" folder in "Embed Frameworks" phase from "TemperatureGenie" target */,
+				359373F52DAE560C0003CCA2 /* Exceptions for "TemperatureGenie" folder in "Embed Frameworks" phase from "TemperatureGenie" target */,
 			);
 			path = TemperatureGenie;
 			sourceTree = "<group>";

@@ -1,0 +1,6 @@
+framework module AtsEnvirovueSdk {
+  umbrella header "AtsEnvirovueSdk.h"
+  export *
+
+  module * { export * }
+}

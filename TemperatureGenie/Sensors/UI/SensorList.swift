@@ -16,25 +16,46 @@ struct SensorList: View {
             VStack {
                 List {
                     ForEach(viewModel.filteredSensors, id: \.sensorId) { sensor in
-                        DiscoveredSensorRow(sensor: sensor, viewModel: viewModel)
-                            .listRowInsets(.init(top: 10, leading: 10, bottom: 0, trailing: 10))
-                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
-                    }.listRowBackground(Color("GenieBackground"))
-                        .listRowSeparator(.hidden)
-                }.listStyle(.plain)
+                        NavigationLink(destination: ManualAlert(sensor: sensor, viewModel: viewModel)) {
+                            DiscoveredSensorRow(sensor: sensor, viewModel: viewModel)
+                                .listRowInsets(.init(top: 10, leading: 10, bottom: 10, trailing: 10))
+                        }
+                    }.listRowBackground(
+                        RoundedRectangle(cornerRadius: 5)
+                            .background(.clear)
+                            .foregroundColor(.clear)
+                    )
+                    .listRowSeparator(.hidden)
+                }.background(Color("GenieBoxBackground"))
+                .listStyle(.plain)
                     .refreshable {
                         viewModel.getUserSensors(token: authenticationHelper.getAccessToken())
                     }
             }
+            .toolbarBackground(.orange, for: .navigationBar, .tabBar)
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Image("TempGenieLogo").resizable().frame(width: 232, height: 30, alignment: .center)
                 }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        authenticationHelper.logout()
+                    } label: {
+                        Text("Logout").padding().font(.custom("poppins_medium", size: 12))
+                            .foregroundColor(Color.white)
+                    }
+                    .frame(maxWidth: 100, minHeight: 44)
+                    .background(Color("GenieLightBlue"))
+                    .cornerRadius(8)
+                }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    LiveIndicator(fillColor: .constant(.red))
+                }
             }
-            .background(Color("GenieBackground"))
-            .navigationTitle("Sensors").foregroundColor(Color("GenieBlue"))
-            .font(.custom("poppins_medium", size: 17))
             .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarHidden(false)
+            
         }
         .alert(viewModel.alertMessageTitle, isPresented: $viewModel.showAlert) {
             Button("OK") {

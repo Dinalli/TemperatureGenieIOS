@@ -1,0 +1,2849 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "AtsEnvirovueSdk",
+    "printedName": "AtsEnvirovueSdk",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AtsEnvirovueSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "CoreBluetooth",
+        "printedName": "CoreBluetooth",
+        "declKind": "Import",
+        "moduleName": "AtsEnvirovueSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "CoreBluetooth",
+        "printedName": "CoreBluetooth",
+        "declKind": "Import",
+        "moduleName": "AtsEnvirovueSdk"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AlarmStatus",
+        "printedName": "AlarmStatus",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "inactive",
+            "printedName": "inactive",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AtsEnvirovueSdk.AlarmStatus.Type) -> AtsEnvirovueSdk.AlarmStatus",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AlarmStatus",
+                    "printedName": "AtsEnvirovueSdk.AlarmStatus",
+                    "usr": "s:15AtsEnvirovueSdk11AlarmStatusO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AtsEnvirovueSdk.AlarmStatus.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlarmStatus",
+                        "printedName": "AtsEnvirovueSdk.AlarmStatus",
+                        "usr": "s:15AtsEnvirovueSdk11AlarmStatusO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:15AtsEnvirovueSdk11AlarmStatusO8inactiveyA2CmF",
+            "mangledName": "$s15AtsEnvirovueSdk11AlarmStatusO8inactiveyA2CmF",
+            "moduleName": "AtsEnvirovueSdk"
+          },
+          {
+            "kind": "Var",
+            "name": "active",
+            "printedName": "active",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AtsEnvirovueSdk.AlarmStatus.Type) -> AtsEnvirovueSdk.AlarmStatus",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AlarmStatus",
+                    "printedName": "AtsEnvirovueSdk.AlarmStatus",
+                    "usr": "s:15AtsEnvirovueSdk11AlarmStatusO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AtsEnvirovueSdk.AlarmStatus.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AlarmStatus",
+                        "printedName": "AtsEnvirovueSdk.AlarmStatus",
+                        "usr": "s:15AtsEnvirovueSdk11AlarmStatusO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:15AtsEnvirovueSdk11AlarmStatusO6activeyA2CmF",
+            "mangledName": "$s15AtsEnvirovueSdk11AlarmStatusO6activeyA2CmF",
+            "moduleName": "AtsEnvirovueSdk"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AtsEnvirovueSdk.AlarmStatus?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AlarmStatus",
+                    "printedName": "AtsEnvirovueSdk.AlarmStatus",
+                    "usr": "s:15AtsEnvirovueSdk11AlarmStatusO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:15AtsEnvirovueSdk11AlarmStatusO8rawValueACSgSi_tcfc",
+            "mangledName": "$s15AtsEnvirovueSdk11AlarmStatusO8rawValueACSgSi_tcfc",
+            "moduleName": "AtsEnvirovueSdk",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15AtsEnvirovueSdk11AlarmStatusO8rawValueSivp",
+            "mangledName": "$s15AtsEnvirovueSdk11AlarmStatusO8rawValueSivp",
+            "moduleName": "AtsEnvirovueSdk",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15AtsEnvirovueSdk11AlarmStatusO8rawValueSivg",
+                "mangledName": "$s15AtsEnvirovueSdk11AlarmStatusO8rawValueSivg",
+                "moduleName": "AtsEnvirovueSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:15AtsEnvirovueSdk11AlarmStatusO",
+        "mangledName": "$s15AtsEnvirovueSdk11AlarmStatusO",
+        "moduleName": "AtsEnvirovueSdk",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "enumRawTypeName": "Int",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AtsEnvirovueSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AtsEnvirovueSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AtsEnvirovueSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AtsEnvirovueSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "CoreBluetooth",
+        "printedName": "CoreBluetooth",
+        "declKind": "Import",
+        "moduleName": "AtsEnvirovueSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AtsEnvirovueSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "CoreBluetooth",
+        "printedName": "CoreBluetooth",
+        "declKind": "Import",
+        "moduleName": "AtsEnvirovueSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AtsEnvirovueSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "CoreBluetooth",
+        "printedName": "CoreBluetooth",
+        "declKind": "Import",
+        "moduleName": "AtsEnvirovueSdk"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SensorStatus",
+        "printedName": "SensorStatus",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "notPresent",
+            "printedName": "notPresent",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AtsEnvirovueSdk.SensorStatus.Type) -> AtsEnvirovueSdk.SensorStatus",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SensorStatus",
+                    "printedName": "AtsEnvirovueSdk.SensorStatus",
+                    "usr": "s:15AtsEnvirovueSdk12SensorStatusO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AtsEnvirovueSdk.SensorStatus.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SensorStatus",
+                        "printedName": "AtsEnvirovueSdk.SensorStatus",
+                        "usr": "s:15AtsEnvirovueSdk12SensorStatusO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:15AtsEnvirovueSdk12SensorStatusO10notPresentyA2CmF",
+            "mangledName": "$s15AtsEnvirovueSdk12SensorStatusO10notPresentyA2CmF",
+            "moduleName": "AtsEnvirovueSdk"
+          },
+          {
+            "kind": "Var",
+            "name": "stopped",
+            "printedName": "stopped",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AtsEnvirovueSdk.SensorStatus.Type) -> AtsEnvirovueSdk.SensorStatus",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SensorStatus",
+                    "printedName": "AtsEnvirovueSdk.SensorStatus",
+                    "usr": "s:15AtsEnvirovueSdk12SensorStatusO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AtsEnvirovueSdk.SensorStatus.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SensorStatus",
+                        "printedName": "AtsEnvirovueSdk.SensorStatus",
+                        "usr": "s:15AtsEnvirovueSdk12SensorStatusO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:15AtsEnvirovueSdk12SensorStatusO7stoppedyA2CmF",
+            "mangledName": "$s15AtsEnvirovueSdk12SensorStatusO7stoppedyA2CmF",
+            "moduleName": "AtsEnvirovueSdk"
+          },
+          {
+            "kind": "Var",
+            "name": "started",
+            "printedName": "started",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AtsEnvirovueSdk.SensorStatus.Type) -> AtsEnvirovueSdk.SensorStatus",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SensorStatus",
+                    "printedName": "AtsEnvirovueSdk.SensorStatus",
+                    "usr": "s:15AtsEnvirovueSdk12SensorStatusO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AtsEnvirovueSdk.SensorStatus.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SensorStatus",
+                        "printedName": "AtsEnvirovueSdk.SensorStatus",
+                        "usr": "s:15AtsEnvirovueSdk12SensorStatusO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:15AtsEnvirovueSdk12SensorStatusO7startedyA2CmF",
+            "mangledName": "$s15AtsEnvirovueSdk12SensorStatusO7startedyA2CmF",
+            "moduleName": "AtsEnvirovueSdk"
+          },
+          {
+            "kind": "Var",
+            "name": "waiting",
+            "printedName": "waiting",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AtsEnvirovueSdk.SensorStatus.Type) -> AtsEnvirovueSdk.SensorStatus",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SensorStatus",
+                    "printedName": "AtsEnvirovueSdk.SensorStatus",
+                    "usr": "s:15AtsEnvirovueSdk12SensorStatusO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AtsEnvirovueSdk.SensorStatus.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SensorStatus",
+                        "printedName": "AtsEnvirovueSdk.SensorStatus",
+                        "usr": "s:15AtsEnvirovueSdk12SensorStatusO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:15AtsEnvirovueSdk12SensorStatusO7waitingyA2CmF",
+            "mangledName": "$s15AtsEnvirovueSdk12SensorStatusO7waitingyA2CmF",
+            "moduleName": "AtsEnvirovueSdk"
+          },
+          {
+            "kind": "Var",
+            "name": "startedAndUploaded",
+            "printedName": "startedAndUploaded",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AtsEnvirovueSdk.SensorStatus.Type) -> AtsEnvirovueSdk.SensorStatus",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SensorStatus",
+                    "printedName": "AtsEnvirovueSdk.SensorStatus",
+                    "usr": "s:15AtsEnvirovueSdk12SensorStatusO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AtsEnvirovueSdk.SensorStatus.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SensorStatus",
+                        "printedName": "AtsEnvirovueSdk.SensorStatus",
+                        "usr": "s:15AtsEnvirovueSdk12SensorStatusO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:15AtsEnvirovueSdk12SensorStatusO18startedAndUploadedyA2CmF",
+            "mangledName": "$s15AtsEnvirovueSdk12SensorStatusO18startedAndUploadedyA2CmF",
+            "moduleName": "AtsEnvirovueSdk"
+          },
+          {
+            "kind": "Var",
+            "name": "stoppedAndUploaded",
+            "printedName": "stoppedAndUploaded",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AtsEnvirovueSdk.SensorStatus.Type) -> AtsEnvirovueSdk.SensorStatus",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SensorStatus",
+                    "printedName": "AtsEnvirovueSdk.SensorStatus",
+                    "usr": "s:15AtsEnvirovueSdk12SensorStatusO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AtsEnvirovueSdk.SensorStatus.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SensorStatus",
+                        "printedName": "AtsEnvirovueSdk.SensorStatus",
+                        "usr": "s:15AtsEnvirovueSdk12SensorStatusO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:15AtsEnvirovueSdk12SensorStatusO18stoppedAndUploadedyA2CmF",
+            "mangledName": "$s15AtsEnvirovueSdk12SensorStatusO18stoppedAndUploadedyA2CmF",
+            "moduleName": "AtsEnvirovueSdk"
+          },
+          {
+            "kind": "Var",
+            "name": "reserved6",
+            "printedName": "reserved6",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AtsEnvirovueSdk.SensorStatus.Type) -> AtsEnvirovueSdk.SensorStatus",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SensorStatus",
+                    "printedName": "AtsEnvirovueSdk.SensorStatus",
+                    "usr": "s:15AtsEnvirovueSdk12SensorStatusO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AtsEnvirovueSdk.SensorStatus.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SensorStatus",
+                        "printedName": "AtsEnvirovueSdk.SensorStatus",
+                        "usr": "s:15AtsEnvirovueSdk12SensorStatusO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:15AtsEnvirovueSdk12SensorStatusO9reserved6yA2CmF",
+            "mangledName": "$s15AtsEnvirovueSdk12SensorStatusO9reserved6yA2CmF",
+            "moduleName": "AtsEnvirovueSdk"
+          },
+          {
+            "kind": "Var",
+            "name": "reserved7",
+            "printedName": "reserved7",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AtsEnvirovueSdk.SensorStatus.Type) -> AtsEnvirovueSdk.SensorStatus",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SensorStatus",
+                    "printedName": "AtsEnvirovueSdk.SensorStatus",
+                    "usr": "s:15AtsEnvirovueSdk12SensorStatusO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AtsEnvirovueSdk.SensorStatus.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SensorStatus",
+                        "printedName": "AtsEnvirovueSdk.SensorStatus",
+                        "usr": "s:15AtsEnvirovueSdk12SensorStatusO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:15AtsEnvirovueSdk12SensorStatusO9reserved7yA2CmF",
+            "mangledName": "$s15AtsEnvirovueSdk12SensorStatusO9reserved7yA2CmF",
+            "moduleName": "AtsEnvirovueSdk"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AtsEnvirovueSdk.SensorStatus?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SensorStatus",
+                    "printedName": "AtsEnvirovueSdk.SensorStatus",
+                    "usr": "s:15AtsEnvirovueSdk12SensorStatusO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:15AtsEnvirovueSdk12SensorStatusO8rawValueACSgSi_tcfc",
+            "mangledName": "$s15AtsEnvirovueSdk12SensorStatusO8rawValueACSgSi_tcfc",
+            "moduleName": "AtsEnvirovueSdk",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15AtsEnvirovueSdk12SensorStatusO8rawValueSivp",
+            "mangledName": "$s15AtsEnvirovueSdk12SensorStatusO8rawValueSivp",
+            "moduleName": "AtsEnvirovueSdk",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15AtsEnvirovueSdk12SensorStatusO8rawValueSivg",
+                "mangledName": "$s15AtsEnvirovueSdk12SensorStatusO8rawValueSivg",
+                "moduleName": "AtsEnvirovueSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:15AtsEnvirovueSdk12SensorStatusO",
+        "mangledName": "$s15AtsEnvirovueSdk12SensorStatusO",
+        "moduleName": "AtsEnvirovueSdk",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "enumRawTypeName": "Int",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AtsEnvirovueSdk"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ZebraBluetoothLeErrorCode",
+        "printedName": "ZebraBluetoothLeErrorCode",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "failedListenerRegistration",
+            "printedName": "failedListenerRegistration",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AtsEnvirovueSdk.ZebraBluetoothLeErrorCode.Type) -> AtsEnvirovueSdk.ZebraBluetoothLeErrorCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ZebraBluetoothLeErrorCode",
+                    "printedName": "AtsEnvirovueSdk.ZebraBluetoothLeErrorCode",
+                    "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AtsEnvirovueSdk.ZebraBluetoothLeErrorCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ZebraBluetoothLeErrorCode",
+                        "printedName": "AtsEnvirovueSdk.ZebraBluetoothLeErrorCode",
+                        "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO26failedListenerRegistrationyA2CmF",
+            "mangledName": "$s15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO26failedListenerRegistrationyA2CmF",
+            "moduleName": "AtsEnvirovueSdk"
+          },
+          {
+            "kind": "Var",
+            "name": "rssiFailedRead",
+            "printedName": "rssiFailedRead",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AtsEnvirovueSdk.ZebraBluetoothLeErrorCode.Type) -> AtsEnvirovueSdk.ZebraBluetoothLeErrorCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ZebraBluetoothLeErrorCode",
+                    "printedName": "AtsEnvirovueSdk.ZebraBluetoothLeErrorCode",
+                    "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AtsEnvirovueSdk.ZebraBluetoothLeErrorCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ZebraBluetoothLeErrorCode",
+                        "printedName": "AtsEnvirovueSdk.ZebraBluetoothLeErrorCode",
+                        "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO14rssiFailedReadyA2CmF",
+            "mangledName": "$s15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO14rssiFailedReadyA2CmF",
+            "moduleName": "AtsEnvirovueSdk"
+          },
+          {
+            "kind": "Var",
+            "name": "connectionFailure",
+            "printedName": "connectionFailure",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AtsEnvirovueSdk.ZebraBluetoothLeErrorCode.Type) -> AtsEnvirovueSdk.ZebraBluetoothLeErrorCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ZebraBluetoothLeErrorCode",
+                    "printedName": "AtsEnvirovueSdk.ZebraBluetoothLeErrorCode",
+                    "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AtsEnvirovueSdk.ZebraBluetoothLeErrorCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ZebraBluetoothLeErrorCode",
+                        "printedName": "AtsEnvirovueSdk.ZebraBluetoothLeErrorCode",
+                        "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO17connectionFailureyA2CmF",
+            "mangledName": "$s15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO17connectionFailureyA2CmF",
+            "moduleName": "AtsEnvirovueSdk"
+          },
+          {
+            "kind": "Var",
+            "name": "timeout",
+            "printedName": "timeout",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AtsEnvirovueSdk.ZebraBluetoothLeErrorCode.Type) -> AtsEnvirovueSdk.ZebraBluetoothLeErrorCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ZebraBluetoothLeErrorCode",
+                    "printedName": "AtsEnvirovueSdk.ZebraBluetoothLeErrorCode",
+                    "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AtsEnvirovueSdk.ZebraBluetoothLeErrorCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ZebraBluetoothLeErrorCode",
+                        "printedName": "AtsEnvirovueSdk.ZebraBluetoothLeErrorCode",
+                        "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO7timeoutyA2CmF",
+            "mangledName": "$s15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO7timeoutyA2CmF",
+            "moduleName": "AtsEnvirovueSdk"
+          },
+          {
+            "kind": "Var",
+            "name": "noConnectionData",
+            "printedName": "noConnectionData",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AtsEnvirovueSdk.ZebraBluetoothLeErrorCode.Type) -> AtsEnvirovueSdk.ZebraBluetoothLeErrorCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ZebraBluetoothLeErrorCode",
+                    "printedName": "AtsEnvirovueSdk.ZebraBluetoothLeErrorCode",
+                    "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AtsEnvirovueSdk.ZebraBluetoothLeErrorCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ZebraBluetoothLeErrorCode",
+                        "printedName": "AtsEnvirovueSdk.ZebraBluetoothLeErrorCode",
+                        "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO16noConnectionDatayA2CmF",
+            "mangledName": "$s15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO16noConnectionDatayA2CmF",
+            "moduleName": "AtsEnvirovueSdk"
+          },
+          {
+            "kind": "Var",
+            "name": "noServiceEndpoint",
+            "printedName": "noServiceEndpoint",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AtsEnvirovueSdk.ZebraBluetoothLeErrorCode.Type) -> AtsEnvirovueSdk.ZebraBluetoothLeErrorCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ZebraBluetoothLeErrorCode",
+                    "printedName": "AtsEnvirovueSdk.ZebraBluetoothLeErrorCode",
+                    "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AtsEnvirovueSdk.ZebraBluetoothLeErrorCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ZebraBluetoothLeErrorCode",
+                        "printedName": "AtsEnvirovueSdk.ZebraBluetoothLeErrorCode",
+                        "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO17noServiceEndpointyA2CmF",
+            "mangledName": "$s15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO17noServiceEndpointyA2CmF",
+            "moduleName": "AtsEnvirovueSdk"
+          },
+          {
+            "kind": "Var",
+            "name": "gattFailedInitiate",
+            "printedName": "gattFailedInitiate",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AtsEnvirovueSdk.ZebraBluetoothLeErrorCode.Type) -> AtsEnvirovueSdk.ZebraBluetoothLeErrorCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ZebraBluetoothLeErrorCode",
+                    "printedName": "AtsEnvirovueSdk.ZebraBluetoothLeErrorCode",
+                    "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AtsEnvirovueSdk.ZebraBluetoothLeErrorCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ZebraBluetoothLeErrorCode",
+                        "printedName": "AtsEnvirovueSdk.ZebraBluetoothLeErrorCode",
+                        "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO18gattFailedInitiateyA2CmF",
+            "mangledName": "$s15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO18gattFailedInitiateyA2CmF",
+            "moduleName": "AtsEnvirovueSdk"
+          },
+          {
+            "kind": "Var",
+            "name": "noPriorResult",
+            "printedName": "noPriorResult",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AtsEnvirovueSdk.ZebraBluetoothLeErrorCode.Type) -> AtsEnvirovueSdk.ZebraBluetoothLeErrorCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ZebraBluetoothLeErrorCode",
+                    "printedName": "AtsEnvirovueSdk.ZebraBluetoothLeErrorCode",
+                    "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AtsEnvirovueSdk.ZebraBluetoothLeErrorCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ZebraBluetoothLeErrorCode",
+                        "printedName": "AtsEnvirovueSdk.ZebraBluetoothLeErrorCode",
+                        "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO13noPriorResultyA2CmF",
+            "mangledName": "$s15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO13noPriorResultyA2CmF",
+            "moduleName": "AtsEnvirovueSdk"
+          },
+          {
+            "kind": "Var",
+            "name": "genericError",
+            "printedName": "genericError",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AtsEnvirovueSdk.ZebraBluetoothLeErrorCode.Type) -> AtsEnvirovueSdk.ZebraBluetoothLeErrorCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ZebraBluetoothLeErrorCode",
+                    "printedName": "AtsEnvirovueSdk.ZebraBluetoothLeErrorCode",
+                    "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AtsEnvirovueSdk.ZebraBluetoothLeErrorCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ZebraBluetoothLeErrorCode",
+                        "printedName": "AtsEnvirovueSdk.ZebraBluetoothLeErrorCode",
+                        "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO07genericG0yA2CmF",
+            "mangledName": "$s15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO07genericG0yA2CmF",
+            "moduleName": "AtsEnvirovueSdk"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AtsEnvirovueSdk.ZebraBluetoothLeErrorCode?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ZebraBluetoothLeErrorCode",
+                    "printedName": "AtsEnvirovueSdk.ZebraBluetoothLeErrorCode",
+                    "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO8rawValueACSgSi_tcfc",
+            "mangledName": "$s15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO8rawValueACSgSi_tcfc",
+            "moduleName": "AtsEnvirovueSdk",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO8rawValueSivp",
+            "mangledName": "$s15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO8rawValueSivp",
+            "moduleName": "AtsEnvirovueSdk",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO8rawValueSivg",
+                "mangledName": "$s15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO8rawValueSivg",
+                "moduleName": "AtsEnvirovueSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO",
+        "mangledName": "$s15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO",
+        "moduleName": "AtsEnvirovueSdk",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "enumRawTypeName": "Int",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ZebraBluetoothLeException",
+        "printedName": "ZebraBluetoothLeException",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "getReason",
+            "printedName": "getReason()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeExceptionV9getReasonSSyF",
+            "mangledName": "$s15AtsEnvirovueSdk25ZebraBluetoothLeExceptionV9getReasonSSyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getErrorCode",
+            "printedName": "getErrorCode()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ZebraBluetoothLeErrorCode",
+                "printedName": "AtsEnvirovueSdk.ZebraBluetoothLeErrorCode",
+                "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeErrorCodeO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeExceptionV12getErrorCodeAA0defiJ0OyF",
+            "mangledName": "$s15AtsEnvirovueSdk25ZebraBluetoothLeExceptionV12getErrorCodeAA0defiJ0OyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:15AtsEnvirovueSdk25ZebraBluetoothLeExceptionV",
+        "mangledName": "$s15AtsEnvirovueSdk25ZebraBluetoothLeExceptionV",
+        "moduleName": "AtsEnvirovueSdk",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Error",
+            "printedName": "Error",
+            "usr": "s:s5ErrorP",
+            "mangledName": "$ss5ErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ZebraIllegalArgumentException",
+        "printedName": "ZebraIllegalArgumentException",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "getMessage",
+            "printedName": "getMessage()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk29ZebraIllegalArgumentExceptionC10getMessageSSyF",
+            "mangledName": "$s15AtsEnvirovueSdk29ZebraIllegalArgumentExceptionC10getMessageSSyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:15AtsEnvirovueSdk29ZebraIllegalArgumentExceptionC",
+        "mangledName": "$s15AtsEnvirovueSdk29ZebraIllegalArgumentExceptionC",
+        "moduleName": "AtsEnvirovueSdk",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Error",
+            "printedName": "Error",
+            "usr": "s:s5ErrorP",
+            "mangledName": "$ss5ErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AtsEnvirovueSdk"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AdvertisingInfo",
+        "printedName": "AdvertisingInfo",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(advertisingData:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AdvertisingInfo",
+                "printedName": "AtsEnvirovueSdk.AdvertisingInfo",
+                "usr": "s:15AtsEnvirovueSdk15AdvertisingInfoC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:15AtsEnvirovueSdk15AdvertisingInfoC15advertisingDataAC10Foundation0G0V_tKcfc",
+            "mangledName": "$s15AtsEnvirovueSdk15AdvertisingInfoC15advertisingDataAC10Foundation0G0V_tKcfc",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "getType",
+            "printedName": "getType()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk15AdvertisingInfoC7getTypeSiyF",
+            "mangledName": "$s15AtsEnvirovueSdk15AdvertisingInfoC7getTypeSiyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getBatteryStatus",
+            "printedName": "getBatteryStatus()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk15AdvertisingInfoC16getBatteryStatusSiyF",
+            "mangledName": "$s15AtsEnvirovueSdk15AdvertisingInfoC16getBatteryStatusSiyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getAdvertisedSystemId",
+            "printedName": "getAdvertisedSystemId()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk15AdvertisingInfoC21getAdvertisedSystemIdSSyF",
+            "mangledName": "$s15AtsEnvirovueSdk15AdvertisingInfoC21getAdvertisedSystemIdSSyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getSensorStatus",
+            "printedName": "getSensorStatus()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk15AdvertisingInfoC15getSensorStatusSiyF",
+            "mangledName": "$s15AtsEnvirovueSdk15AdvertisingInfoC15getSensorStatusSiyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getAdvertisingData",
+            "printedName": "getAdvertisingData()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk15AdvertisingInfoC03getD4Data10Foundation0G0VyF",
+            "mangledName": "$s15AtsEnvirovueSdk15AdvertisingInfoC03getD4Data10Foundation0G0VyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getTemperatureSensorStatus",
+            "printedName": "getTemperatureSensorStatus()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SensorStatus",
+                "printedName": "AtsEnvirovueSdk.SensorStatus",
+                "usr": "s:15AtsEnvirovueSdk12SensorStatusO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk15AdvertisingInfoC26getTemperatureSensorStatusAA0hI0OyF",
+            "mangledName": "$s15AtsEnvirovueSdk15AdvertisingInfoC26getTemperatureSensorStatusAA0hI0OyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getHumiditySensorStatus",
+            "printedName": "getHumiditySensorStatus()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SensorStatus",
+                "printedName": "AtsEnvirovueSdk.SensorStatus",
+                "usr": "s:15AtsEnvirovueSdk12SensorStatusO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk15AdvertisingInfoC23getHumiditySensorStatusAA0hI0OyF",
+            "mangledName": "$s15AtsEnvirovueSdk15AdvertisingInfoC23getHumiditySensorStatusAA0hI0OyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getPressureSensorStatus",
+            "printedName": "getPressureSensorStatus()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SensorStatus",
+                "printedName": "AtsEnvirovueSdk.SensorStatus",
+                "usr": "s:15AtsEnvirovueSdk12SensorStatusO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk15AdvertisingInfoC23getPressureSensorStatusAA0hI0OyF",
+            "mangledName": "$s15AtsEnvirovueSdk15AdvertisingInfoC23getPressureSensorStatusAA0hI0OyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getLightSensorStatus",
+            "printedName": "getLightSensorStatus()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SensorStatus",
+                "printedName": "AtsEnvirovueSdk.SensorStatus",
+                "usr": "s:15AtsEnvirovueSdk12SensorStatusO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk15AdvertisingInfoC20getLightSensorStatusAA0hI0OyF",
+            "mangledName": "$s15AtsEnvirovueSdk15AdvertisingInfoC20getLightSensorStatusAA0hI0OyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getInertialSensorStatus",
+            "printedName": "getInertialSensorStatus()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SensorStatus",
+                "printedName": "AtsEnvirovueSdk.SensorStatus",
+                "usr": "s:15AtsEnvirovueSdk12SensorStatusO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk15AdvertisingInfoC23getInertialSensorStatusAA0hI0OyF",
+            "mangledName": "$s15AtsEnvirovueSdk15AdvertisingInfoC23getInertialSensorStatusAA0hI0OyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getAlarmStatus",
+            "printedName": "getAlarmStatus()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AlarmStatus",
+                "printedName": "AtsEnvirovueSdk.AlarmStatus",
+                "usr": "s:15AtsEnvirovueSdk11AlarmStatusO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk15AdvertisingInfoC14getAlarmStatusAA0gH0OyF",
+            "mangledName": "$s15AtsEnvirovueSdk15AdvertisingInfoC14getAlarmStatusAA0gH0OyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getNumTemperatureSamples",
+            "printedName": "getNumTemperatureSamples()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk15AdvertisingInfoC24getNumTemperatureSamplesSiyF",
+            "mangledName": "$s15AtsEnvirovueSdk15AdvertisingInfoC24getNumTemperatureSamplesSiyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getNumHumiditySamples",
+            "printedName": "getNumHumiditySamples()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk15AdvertisingInfoC21getNumHumiditySamplesSiyF",
+            "mangledName": "$s15AtsEnvirovueSdk15AdvertisingInfoC21getNumHumiditySamplesSiyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getNumPressureSamples",
+            "printedName": "getNumPressureSamples()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk15AdvertisingInfoC21getNumPressureSamplesSiyF",
+            "mangledName": "$s15AtsEnvirovueSdk15AdvertisingInfoC21getNumPressureSamplesSiyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getNumLightSamples",
+            "printedName": "getNumLightSamples()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk15AdvertisingInfoC18getNumLightSamplesSiyF",
+            "mangledName": "$s15AtsEnvirovueSdk15AdvertisingInfoC18getNumLightSamplesSiyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getNumInertialSamples",
+            "printedName": "getNumInertialSamples()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk15AdvertisingInfoC21getNumInertialSamplesSiyF",
+            "mangledName": "$s15AtsEnvirovueSdk15AdvertisingInfoC21getNumInertialSamplesSiyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getLastTemperatureSampled",
+            "printedName": "getLastTemperatureSampled()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk15AdvertisingInfoC25getLastTemperatureSampledSiyF",
+            "mangledName": "$s15AtsEnvirovueSdk15AdvertisingInfoC25getLastTemperatureSampledSiyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "description",
+            "printedName": "description",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15AtsEnvirovueSdk15AdvertisingInfoC11descriptionSSvp",
+            "mangledName": "$s15AtsEnvirovueSdk15AdvertisingInfoC11descriptionSSvp",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15AtsEnvirovueSdk15AdvertisingInfoC11descriptionSSvg",
+                "mangledName": "$s15AtsEnvirovueSdk15AdvertisingInfoC11descriptionSSvg",
+                "moduleName": "AtsEnvirovueSdk",
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:15AtsEnvirovueSdk15AdvertisingInfoC",
+        "mangledName": "$s15AtsEnvirovueSdk15AdvertisingInfoC",
+        "moduleName": "AtsEnvirovueSdk",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "InfoDescriptor",
+        "printedName": "InfoDescriptor",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(descriptorData:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "InfoDescriptor",
+                "printedName": "AtsEnvirovueSdk.InfoDescriptor",
+                "usr": "s:15AtsEnvirovueSdk14InfoDescriptorC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:15AtsEnvirovueSdk14InfoDescriptorC14descriptorDataAC10Foundation0G0V_tKcfc",
+            "mangledName": "$s15AtsEnvirovueSdk14InfoDescriptorC14descriptorDataAC10Foundation0G0V_tKcfc",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "getInfoDescriptorData",
+            "printedName": "getInfoDescriptorData()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk14InfoDescriptorC03getdE4Data10Foundation0G0VyF",
+            "mangledName": "$s15AtsEnvirovueSdk14InfoDescriptorC03getdE4Data10Foundation0G0VyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getNumberOfSamples",
+            "printedName": "getNumberOfSamples()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk14InfoDescriptorC18getNumberOfSamplesSiyF",
+            "mangledName": "$s15AtsEnvirovueSdk14InfoDescriptorC18getNumberOfSamplesSiyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getSensorSamplingStatus",
+            "printedName": "getSensorSamplingStatus()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk14InfoDescriptorC23getSensorSamplingStatusSiyF",
+            "mangledName": "$s15AtsEnvirovueSdk14InfoDescriptorC23getSensorSamplingStatusSiyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getTemperatureSensorStatus",
+            "printedName": "getTemperatureSensorStatus()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SensorStatus",
+                "printedName": "AtsEnvirovueSdk.SensorStatus",
+                "usr": "s:15AtsEnvirovueSdk12SensorStatusO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk14InfoDescriptorC26getTemperatureSensorStatusAA0hI0OyF",
+            "mangledName": "$s15AtsEnvirovueSdk14InfoDescriptorC26getTemperatureSensorStatusAA0hI0OyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "isUploadedToCloud",
+            "printedName": "isUploadedToCloud()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk14InfoDescriptorC17isUploadedToCloudSbyF",
+            "mangledName": "$s15AtsEnvirovueSdk14InfoDescriptorC17isUploadedToCloudSbyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "isAlarmDueToOverHighThreshold",
+            "printedName": "isAlarmDueToOverHighThreshold()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk14InfoDescriptorC29isAlarmDueToOverHighThresholdSbyF",
+            "mangledName": "$s15AtsEnvirovueSdk14InfoDescriptorC29isAlarmDueToOverHighThresholdSbyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "isAlarmDueToUnderLowThreshold",
+            "printedName": "isAlarmDueToUnderLowThreshold()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk14InfoDescriptorC29isAlarmDueToUnderLowThresholdSbyF",
+            "mangledName": "$s15AtsEnvirovueSdk14InfoDescriptorC29isAlarmDueToUnderLowThresholdSbyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "isExternalProbeSerialNumberChanged",
+            "printedName": "isExternalProbeSerialNumberChanged()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk14InfoDescriptorC34isExternalProbeSerialNumberChangedSbyF",
+            "mangledName": "$s15AtsEnvirovueSdk14InfoDescriptorC34isExternalProbeSerialNumberChangedSbyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getTaskConfigurationTimestamp",
+            "printedName": "getTaskConfigurationTimestamp()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Date",
+                "printedName": "Foundation.Date",
+                "usr": "s:10Foundation4DateV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk14InfoDescriptorC29getTaskConfigurationTimestamp10Foundation4DateVyF",
+            "mangledName": "$s15AtsEnvirovueSdk14InfoDescriptorC29getTaskConfigurationTimestamp10Foundation4DateVyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getFirstTimestamp",
+            "printedName": "getFirstTimestamp()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Date",
+                "printedName": "Foundation.Date",
+                "usr": "s:10Foundation4DateV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk14InfoDescriptorC17getFirstTimestamp10Foundation4DateVyF",
+            "mangledName": "$s15AtsEnvirovueSdk14InfoDescriptorC17getFirstTimestamp10Foundation4DateVyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getLastTimestamp",
+            "printedName": "getLastTimestamp()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Date",
+                "printedName": "Foundation.Date",
+                "usr": "s:10Foundation4DateV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk14InfoDescriptorC16getLastTimestamp10Foundation4DateVyF",
+            "mangledName": "$s15AtsEnvirovueSdk14InfoDescriptorC16getLastTimestamp10Foundation4DateVyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getDeliveredTimestamp",
+            "printedName": "getDeliveredTimestamp()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Date",
+                "printedName": "Foundation.Date",
+                "usr": "s:10Foundation4DateV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk14InfoDescriptorC21getDeliveredTimestamp10Foundation4DateVyF",
+            "mangledName": "$s15AtsEnvirovueSdk14InfoDescriptorC21getDeliveredTimestamp10Foundation4DateVyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getExternalProbeSerialNumber",
+            "printedName": "getExternalProbeSerialNumber()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk14InfoDescriptorC28getExternalProbeSerialNumber10Foundation4DataVyF",
+            "mangledName": "$s15AtsEnvirovueSdk14InfoDescriptorC28getExternalProbeSerialNumber10Foundation4DataVyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getTaskInitiatorId",
+            "printedName": "getTaskInitiatorId()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk14InfoDescriptorC18getTaskInitiatorIdSiyF",
+            "mangledName": "$s15AtsEnvirovueSdk14InfoDescriptorC18getTaskInitiatorIdSiyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getTaskId",
+            "printedName": "getTaskId()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int64",
+                "printedName": "Swift.Int64",
+                "usr": "s:s5Int64V"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk14InfoDescriptorC9getTaskIds5Int64VyF",
+            "mangledName": "$s15AtsEnvirovueSdk14InfoDescriptorC9getTaskIds5Int64VyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getTotalTaskSamples",
+            "printedName": "getTotalTaskSamples()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int64",
+                "printedName": "Swift.Int64",
+                "usr": "s:s5Int64V"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk14InfoDescriptorC19getTotalTaskSampless5Int64VyF",
+            "mangledName": "$s15AtsEnvirovueSdk14InfoDescriptorC19getTotalTaskSampless5Int64VyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getSignature",
+            "printedName": "getSignature()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk14InfoDescriptorC12getSignature10Foundation4DataVyF",
+            "mangledName": "$s15AtsEnvirovueSdk14InfoDescriptorC12getSignature10Foundation4DataVyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "description",
+            "printedName": "description",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15AtsEnvirovueSdk14InfoDescriptorC11descriptionSSvp",
+            "mangledName": "$s15AtsEnvirovueSdk14InfoDescriptorC11descriptionSSvp",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15AtsEnvirovueSdk14InfoDescriptorC11descriptionSSvg",
+                "mangledName": "$s15AtsEnvirovueSdk14InfoDescriptorC11descriptionSSvg",
+                "moduleName": "AtsEnvirovueSdk",
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:15AtsEnvirovueSdk14InfoDescriptorC",
+        "mangledName": "$s15AtsEnvirovueSdk14InfoDescriptorC",
+        "moduleName": "AtsEnvirovueSdk",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "CoreBluetooth",
+        "printedName": "CoreBluetooth",
+        "declKind": "Import",
+        "moduleName": "AtsEnvirovueSdk"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SensorTimestamp",
+        "printedName": "SensorTimestamp",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "getSecondsSinceBaseTime",
+            "printedName": "getSecondsSinceBaseTime()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int64",
+                "printedName": "Swift.Int64",
+                "usr": "s:s5Int64V"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk15SensorTimestampC23getSecondsSinceBaseTimes5Int64VyF",
+            "mangledName": "$s15AtsEnvirovueSdk15SensorTimestampC23getSecondsSinceBaseTimes5Int64VyF",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "description",
+            "printedName": "description",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15AtsEnvirovueSdk15SensorTimestampC11descriptionSSvp",
+            "mangledName": "$s15AtsEnvirovueSdk15SensorTimestampC11descriptionSSvp",
+            "moduleName": "AtsEnvirovueSdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15AtsEnvirovueSdk15SensorTimestampC11descriptionSSvg",
+                "mangledName": "$s15AtsEnvirovueSdk15SensorTimestampC11descriptionSSvg",
+                "moduleName": "AtsEnvirovueSdk",
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:15AtsEnvirovueSdk15SensorTimestampC",
+        "mangledName": "$s15AtsEnvirovueSdk15SensorTimestampC",
+        "moduleName": "AtsEnvirovueSdk",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "CoreBluetooth",
+        "printedName": "CoreBluetooth",
+        "declKind": "Import",
+        "moduleName": "AtsEnvirovueSdk"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ZebraSdkUtilities",
+        "printedName": "ZebraSdkUtilities",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "getAdvertisingInfo",
+            "printedName": "getAdvertisingInfo(data:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AdvertisingInfo",
+                "printedName": "AtsEnvirovueSdk.AdvertisingInfo",
+                "usr": "s:15AtsEnvirovueSdk15AdvertisingInfoC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk05ZebraC9UtilitiesC18getAdvertisingInfo4dataAA0gH0C10Foundation4DataV_tKFZ",
+            "mangledName": "$s15AtsEnvirovueSdk05ZebraC9UtilitiesC18getAdvertisingInfo4dataAA0gH0C10Foundation4DataV_tKFZ",
+            "moduleName": "AtsEnvirovueSdk",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getInfoDescriptor",
+            "printedName": "getInfoDescriptor(data:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "InfoDescriptor",
+                "printedName": "AtsEnvirovueSdk.InfoDescriptor",
+                "usr": "s:15AtsEnvirovueSdk14InfoDescriptorC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk05ZebraC9UtilitiesC17getInfoDescriptor4dataAA0gH0C10Foundation4DataV_tKFZ",
+            "mangledName": "$s15AtsEnvirovueSdk05ZebraC9UtilitiesC17getInfoDescriptor4dataAA0gH0C10Foundation4DataV_tKFZ",
+            "moduleName": "AtsEnvirovueSdk",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "readSamplesOffline",
+            "printedName": "readSamplesOffline(peripheral:size:offset:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.Int16]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int16",
+                    "printedName": "Swift.Int16",
+                    "usr": "s:s5Int16V"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CBPeripheral",
+                "printedName": "CoreBluetooth.CBPeripheral",
+                "usr": "c:objc(cs)CBPeripheral"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UInt",
+                "printedName": "Swift.UInt",
+                "usr": "s:Su"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UInt",
+                "printedName": "Swift.UInt",
+                "usr": "s:Su"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15AtsEnvirovueSdk05ZebraC9UtilitiesC18readSamplesOffline10peripheral4size6offsetSays5Int16VGSo12CBPeripheralC_S2utYaKFZ",
+            "mangledName": "$s15AtsEnvirovueSdk05ZebraC9UtilitiesC18readSamplesOffline10peripheral4size6offsetSays5Int16VGSo12CBPeripheralC_S2utYaKFZ",
+            "moduleName": "AtsEnvirovueSdk",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:15AtsEnvirovueSdk05ZebraC9UtilitiesC",
+        "mangledName": "$s15AtsEnvirovueSdk05ZebraC9UtilitiesC",
+        "moduleName": "AtsEnvirovueSdk",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/btleComm\/BluetoothManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 246,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/enums\/AlarmStatus.swift",
+      "kind": "IntegerLiteral",
+      "offset": 52,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/enums\/AlarmStatus.swift",
+      "kind": "IntegerLiteral",
+      "offset": 73,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/enums\/SensorCharacteristic.swift",
+      "kind": "IntegerLiteral",
+      "offset": 18887,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/enums\/SensorStatus.swift",
+      "kind": "IntegerLiteral",
+      "offset": 55,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/enums\/SensorStatus.swift",
+      "kind": "IntegerLiteral",
+      "offset": 77,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/enums\/SensorStatus.swift",
+      "kind": "IntegerLiteral",
+      "offset": 99,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/enums\/SensorStatus.swift",
+      "kind": "IntegerLiteral",
+      "offset": 121,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/enums\/SensorStatus.swift",
+      "kind": "IntegerLiteral",
+      "offset": 154,
+      "length": 1,
+      "value": "4"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/enums\/SensorStatus.swift",
+      "kind": "IntegerLiteral",
+      "offset": 187,
+      "length": 1,
+      "value": "5"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/enums\/SensorStatus.swift",
+      "kind": "IntegerLiteral",
+      "offset": 211,
+      "length": 1,
+      "value": "6"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/enums\/SensorStatus.swift",
+      "kind": "IntegerLiteral",
+      "offset": 235,
+      "length": 1,
+      "value": "7"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/exception\/ZebraBluetoothLeError.swift",
+      "kind": "IntegerLiteral",
+      "offset": 102,
+      "length": 3,
+      "value": "247"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/exception\/ZebraBluetoothLeError.swift",
+      "kind": "IntegerLiteral",
+      "offset": 132,
+      "length": 3,
+      "value": "248"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/exception\/ZebraBluetoothLeError.swift",
+      "kind": "IntegerLiteral",
+      "offset": 165,
+      "length": 3,
+      "value": "249"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/exception\/ZebraBluetoothLeError.swift",
+      "kind": "IntegerLiteral",
+      "offset": 188,
+      "length": 3,
+      "value": "250"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/exception\/ZebraBluetoothLeError.swift",
+      "kind": "IntegerLiteral",
+      "offset": 220,
+      "length": 3,
+      "value": "251"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/exception\/ZebraBluetoothLeError.swift",
+      "kind": "IntegerLiteral",
+      "offset": 253,
+      "length": 3,
+      "value": "252"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/exception\/ZebraBluetoothLeError.swift",
+      "kind": "IntegerLiteral",
+      "offset": 287,
+      "length": 3,
+      "value": "253"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/exception\/ZebraBluetoothLeError.swift",
+      "kind": "IntegerLiteral",
+      "offset": 316,
+      "length": 3,
+      "value": "254"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/exception\/ZebraBluetoothLeError.swift",
+      "kind": "IntegerLiteral",
+      "offset": 344,
+      "length": 3,
+      "value": "255"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/AdvertisingInfo.swift",
+      "kind": "IntegerLiteral",
+      "offset": 258,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/AdvertisingInfo.swift",
+      "kind": "IntegerLiteral",
+      "offset": 302,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/AdvertisingInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 354,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/AdvertisingInfo.swift",
+      "kind": "IntegerLiteral",
+      "offset": 398,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/AdvertisingInfo.swift",
+      "kind": "IntegerLiteral",
+      "offset": 450,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/AdvertisingInfo.swift",
+      "kind": "IntegerLiteral",
+      "offset": 499,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/AdvertisingInfo.swift",
+      "kind": "IntegerLiteral",
+      "offset": 548,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/AdvertisingInfo.swift",
+      "kind": "IntegerLiteral",
+      "offset": 594,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/AdvertisingInfo.swift",
+      "kind": "IntegerLiteral",
+      "offset": 643,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/AdvertisingInfo.swift",
+      "kind": "IntegerLiteral",
+      "offset": 696,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/SensorManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 263,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/SensorManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 299,
+      "length": 2,
+      "value": "-1"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/SensorManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 332,
+      "length": 2,
+      "value": "63"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/SensorManager.swift",
+      "kind": "Array",
+      "offset": 378,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/SensorManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 410,
+      "length": 2,
+      "value": "-1"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/SensorManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 438,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/SensorTimestamp.swift",
+      "kind": "IntegerLiteral",
+      "offset": 86,
+      "length": 9,
+      "value": "946684800"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/SensorTimestamp.swift",
+      "kind": "IntegerLiteral",
+      "offset": 187,
+      "length": 4,
+      "value": "2000"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/SensorTimestamp.swift",
+      "kind": "IntegerLiteral",
+      "offset": 200,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/SensorTimestamp.swift",
+      "kind": "IntegerLiteral",
+      "offset": 208,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/SensorTimestamp.swift",
+      "kind": "IntegerLiteral",
+      "offset": 217,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ats-envirovue-ios-sdk\/ats-envirovue-ios-sdk\/DistributionFramework\/AtsEnvirovueSdk\/AtsEnvirovueSdk\/sources\/SensorTimestamp.swift",
+      "kind": "IntegerLiteral",
+      "offset": 228,
+      "length": 1,
+      "value": "0"
+    }
+  ]
+}
