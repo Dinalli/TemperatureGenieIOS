@@ -61,6 +61,10 @@ struct SensorList: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
             .navigationBarHidden(false)
+            .navigationTitle("Sensors").foregroundStyle(Color.white)
+            .font(.custom("poppins_medium", size: 17))
+            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbarBackground(Color.white, for: .navigationBar)
         }
         .alert(viewModel.alertMessageTitle, isPresented: $viewModel.showAlert) {
             Button("OK") {
