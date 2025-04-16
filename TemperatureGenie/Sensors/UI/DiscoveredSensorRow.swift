@@ -57,12 +57,12 @@ struct DiscoveredSensorRow: View {
                 }
             }
             VStack {
-                Button {
-                    print("PAUSE TAPPED")
-                } label: {
+//                Button {
+//                    print("PAUSE TAPPED")
+//                } label: {
                     Text("Pause\n Alert").padding().font(.custom("poppins_medium", size: 12))
                         .foregroundColor(Color.white)
-                }
+                //}
                 .frame(maxWidth: 100, minHeight: 44)
                 .background(Color("GenieLightBlue"))
                 .cornerRadius(8)
@@ -74,6 +74,9 @@ struct DiscoveredSensorRow: View {
                         trailing: 10
                     )
                 )
+                .onTapGesture {
+                    print("PAUSE TAPPED")
+                }
             }
         }.frame(maxWidth: .infinity, minHeight:100, alignment: .leading)
             .background(
@@ -85,5 +88,5 @@ struct DiscoveredSensorRow: View {
 }
 
 #Preview {
-    DiscoveredSensorRow(sensor: UserSensorResponse(sensorId: 0, description: "Hot Cabinet 1", physicalId: "ABC!234", batteryLevelPercentage: 67, storeName: "ANDYS", departmentName: "Department 1", active: true, inAlarmState: false, lastTemperatureReading: "10.4", lastTemperatureReadingTimestamp: "", manualReadsEnabled: true, alertPauseEndDateTime: ""), viewModel: SensorListViewModel())
+    DiscoveredSensorRow(sensor: UserSensorResponse(sensorId: 0, description: "Hot Cabinet 1", serialNumber: "ZS300_DLJ230202572", physicalId: "ABC!234", batteryLevelPercentage: 67, storeName: "ANDYS", departmentName: "Department 1", active: true, inAlarmState: false, lastTemperatureReading: "10.4", lastTemperatureReadingTimestamp: "", manualReadsEnabled: true, alertPauseEndDateTime: ""), viewModel: SensorListViewModel())
 }

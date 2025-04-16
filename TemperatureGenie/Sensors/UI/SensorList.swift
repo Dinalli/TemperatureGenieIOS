@@ -13,49 +13,54 @@ struct SensorList: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                List {
-                    ForEach(viewModel.filteredSensors, id: \.sensorId) { sensor in
-                        NavigationLink(destination: ManualAlert(sensor: sensor, viewModel: viewModel)) {
+            ZStack {
+                VStack {
+                    List {
+                        ForEach(viewModel.filteredSensors, id: \.sensorId) { sensor in
                             DiscoveredSensorRow(sensor: sensor, viewModel: viewModel)
                                 .listRowInsets(.init(top: 10, leading: 10, bottom: 10, trailing: 10))
-                        }
-                    }.listRowBackground(
-                        RoundedRectangle(cornerRadius: 5)
-                            .background(.clear)
-                            .foregroundColor(.clear)
-                    )
-                    .listRowSeparator(.hidden)
-                }.background(Color("GenieBoxBackground"))
-                .listStyle(.plain)
+                                .overlay(
+                                    NavigationLink(destination: ManualAlert(sensor: sensor, viewModel: viewModel)) {
+                                        EmptyView()
+                                    }.opacity(0)
+                                )
+                        }.listRowBackground(
+                            RoundedRectangle(cornerRadius: 5)
+                                .background(.clear)
+                                .foregroundColor(.clear)
+                        )
+                        .listRowSeparator(.hidden)
+                    }
+                    .listStyle(.plain)
                     .refreshable {
                         viewModel.getUserSensors(token: authenticationHelper.getAccessToken())
                     }
-            }
-            .toolbarBackground(.orange, for: .navigationBar, .tabBar)
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Image("TempGenieLogo").resizable().frame(width: 232, height: 30, alignment: .center)
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        authenticationHelper.logout()
-                    } label: {
-                        Text("Logout").padding().font(.custom("poppins_medium", size: 12))
-                            .foregroundColor(Color.white)
+                .toolbarBackground(.orange, for: .navigationBar, .tabBar)
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        Image("TempGenieLogo").resizable().frame(width: 232, height: 30, alignment: .center)
                     }
-                    .frame(maxWidth: 100, minHeight: 44)
-                    .background(Color("GenieLightBlue"))
-                    .cornerRadius(8)
-                }
-                ToolbarItem(placement: .navigationBarLeading) {
-                    LiveIndicator(fillColor: .constant(.red))
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            authenticationHelper.logout()
+                        } label: {
+                            Text("Logout").padding().font(.custom("poppins_medium", size: 12))
+                                .foregroundColor(Color.white)
+                        }
+                        .frame(maxWidth: 100, minHeight: 44)
+                        .background(Color("GenieLightBlue"))
+                        .cornerRadius(8)
+                    }
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        LiveIndicator(fillColor: .constant(.red))
+                    }
                 }
             }
+            .background(Color("GenieBoxBackground"))
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
             .navigationBarHidden(false)
-            
         }
         .alert(viewModel.alertMessageTitle, isPresented: $viewModel.showAlert) {
             Button("OK") {
@@ -77,3 +82,4 @@ struct SensorList: View {
 #Preview {
     SensorList()
 }
+

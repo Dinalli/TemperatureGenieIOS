@@ -10,6 +10,7 @@ import CoreBluetooth
 public struct UserSensorResponse: Codable {
     public let sensorId: Int
     public let description: String
+    public let serialNumber: String
     public let physicalId: String
     public let batteryLevelPercentage: Int
     public let storeName: String
