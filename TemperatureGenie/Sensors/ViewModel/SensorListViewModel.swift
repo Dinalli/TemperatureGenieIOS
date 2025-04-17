@@ -20,7 +20,7 @@ class SensorListViewModel: NSObject, ObservableObject {
     @Published var isLoading: Bool = false
     @Published var alertMessageTitle = ""
     @Published var alertMessage = ""
-    @Published var showAlert = false
+    @Published var showAlert = true
     
     private var discoveryList: [BLEDeviceData] = []
     private var discoveredUserSensors: [UserSensorResponse] = []
@@ -89,6 +89,35 @@ class SensorListViewModel: NSObject, ObservableObject {
         } else {
             return false
         }
+    }
+    
+    func submitManualReading(sensor: UserSensorResponse, tempReading: String, probedLocation: String, readingNotes: String, token: String) {
+        let manualReadingSubmission = ManualReadingSubmission(sensorPhysicalId: sensor.physicalId, manualReadTemperature: 10.0, manualReadDate: Date().toString(dateFormat: "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"), manualReadLocation: probedLocation, manualReadNote: readingNotes, manualReadLatitude: "", manualReadLongitude: "")
+        self.service.submitManualAlertReading(token: token, manualReading: manualReadingSubmission, session: URLSession.shared)
+            .subscribe(on: DispatchQueue.global(qos: .background))
+            .sink { res  in
+                switch res {
+                    case .failure(let error):
+                    DispatchQueue.main.async {
+                        self.alertMessageTitle = "Submission error"
+                        self.alertMessage = error.localizedDescription
+                        self.showAlert = true
+                    }
+                    case .finished:
+                        break
+                }
+            } receiveValue: { response in
+                DispatchQueue.main.async {
+                    self.alertMessageTitle = "Submission Complete"
+                    self.alertMessage = "Submission has been successful"
+                    self.showAlert = true
+                }
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func validateManualTempReading() {
+        
     }
     
 }

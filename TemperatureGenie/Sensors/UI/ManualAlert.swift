@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct ManualAlert: View {
+    @EnvironmentObject var authenticationHelper: AuthenticationHelper
     var sensor: UserSensorResponse
     @StateObject var viewModel: SensorListViewModel
     
     @State private var tempReading: String = ""
-    @State private var productType: String = ""
+    @State private var probeLocation: String = ""
     @State private var notes: String = ""
     
     var body: some View {
@@ -37,7 +38,7 @@ struct ManualAlert: View {
                         Text("Product type probed").font(.custom("poppins_medium", size: 12)).foregroundColor(Color("GenieBlue"))
                         Spacer()
                     }
-                    TextField("Enter product type probed", text: $productType).autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/).font(.custom("poppins_medium", size: 17)).foregroundColor(Color("GenieBlue"))
+                    TextField("Enter product type probed", text: $probeLocation).autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/).font(.custom("poppins_medium", size: 17)).foregroundColor(Color("GenieBlue"))
                         .padding()
                         .background(Color.white)
                         .overlay(
@@ -59,7 +60,7 @@ struct ManualAlert: View {
                     )
                 }
                 Button {
-                    //viewModel.submitAlert()
+                    viewModel.submitManualReading(sensor: sensor, tempReading: tempReading, probedLocation: probeLocation, readingNotes: notes, token: authenticationHelper.getAccessToken())
                     print("Submit reading")
                 } label: {
                     Text("Submit alert reading").font(.custom("poppins_medium", size: 17))
@@ -68,6 +69,7 @@ struct ManualAlert: View {
                         .cornerRadius(8)
                         .foregroundColor(Color.white)
                 }
+            }.padding()
                 .alert(viewModel.alertMessageTitle, isPresented: $viewModel.showAlert) {
                     Button("OK") {
                         viewModel.showAlert = false
@@ -75,7 +77,6 @@ struct ManualAlert: View {
                 } message: {
                     Text(viewModel.alertMessage)
                 }
-            }.padding()
         }
         .navigationTitle("Alert action for \(sensor.description)").foregroundStyle(Color.white)
         .font(.custom("poppins_medium", size: 17))
