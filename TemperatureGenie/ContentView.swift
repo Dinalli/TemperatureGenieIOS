@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var authenticationHelper = AuthenticationHelper()
+    @StateObject var locationHelper = LocationHelper()
     
     @State var showSplash = true
     
@@ -61,6 +62,7 @@ struct ContentView: View {
             }
         }
         .environmentObject(authenticationHelper)
+        .environmentObject(locationHelper)
     }
 }
 

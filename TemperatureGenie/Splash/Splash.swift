@@ -8,32 +8,34 @@
 import SwiftUI
 
 struct Splash: View {
-    static var shouldAnimate = true
-
-    @State var showAnimation = false
     @State var imageAlpha = 0.2
+    @State var angle:Double = 360
+    @State var opacity:Double = 1
+    @State var scale: CGFloat = 3
 
     var body: some View {
-        let animation = Animation
-            .linear(duration: 2.0)
         VStack {
             Spacer()
             HStack { logoImage }
             Spacer()
         }.edgesIgnoringSafeArea(.all)
             .onAppear {
-                DispatchQueue.main.async {
-                    withAnimation(animation) {
-                        imageAlpha = 1.0
-                        showAnimation =  true
-                    }
+                withAnimation(.linear(duration: 2)) {
+                    self.angle = 0
+                    self.scale = 1
+                    self.opacity = 0
                 }
             }
     }
 
     private var logoImage: some View {
         return AnyView(
-            Image("TempGenieLogo").resizable().frame(width: 232, height: 30, alignment: .center)
+            Image("TempGenieLogo")
+                .resizable()
+                .frame(width: 65, height: 10, alignment: .center)
+                .rotation3DEffect(.degrees(angle), axis: (x: 0, y: 1, z: 0))
+                .scaleEffect(scale)
+                .opacity(opacity)
         )
     }
 }

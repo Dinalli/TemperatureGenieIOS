@@ -400,6 +400,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TemperatureGenie/Info.plist;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We require Bluetooth permission to find and connect with nearby sensors.\n\nWe require Bluetooth permission to find and connect with nearby devices.\n\nWe require Bluetooth permission to discover and connect with nearby devices.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to confirm where readings are taken";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -605,6 +606,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TemperatureGenie/Info.plist;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We require Bluetooth permission to find and connect with nearby sensors.\n\nWe require Bluetooth permission to find and connect with nearby devices.\n\nWe require Bluetooth permission to discover and connect with nearby devices.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to confirm where readings are taken";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -651,6 +653,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TemperatureGenie/Info.plist;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We require Bluetooth permission to find and connect with nearby sensors.\n\nWe require Bluetooth permission to find and connect with nearby devices.\n\nWe require Bluetooth permission to discover and connect with nearby devices.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to confirm where readings are taken";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

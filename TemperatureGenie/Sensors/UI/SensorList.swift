@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SensorList: View {
     @EnvironmentObject var authenticationHelper: AuthenticationHelper
+    @EnvironmentObject var locationHelper: LocationHelper
     @StateObject var viewModel: SensorListViewModel = SensorListViewModel()
     
     var body: some View {
@@ -79,6 +80,7 @@ struct SensorList: View {
             viewModel.setUpManager()
             viewModel.getDiscoveredSensors()
             viewModel.getUserSensors(token: authenticationHelper.getAccessToken())
+            locationHelper.checkLocationState()
         }
     }
 }

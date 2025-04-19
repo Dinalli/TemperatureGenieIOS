@@ -13,5 +13,12 @@
 		<string>poppins_regular.ttf</string>
 		<string>poppins_semibold.ttf</string>
 	</array>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIColorName</key>
+		<string>mainBackground</string>
+		<key>UIImageName</key>
+		<string>AppIcon</string>
+	</dict>
 </dict>
 </plist>

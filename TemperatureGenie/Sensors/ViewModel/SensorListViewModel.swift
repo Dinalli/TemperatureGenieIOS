@@ -20,7 +20,9 @@ class SensorListViewModel: NSObject, ObservableObject {
     @Published var isLoading: Bool = false
     @Published var alertMessageTitle = ""
     @Published var alertMessage = ""
-    @Published var showAlert = true
+    @Published var showAlert = false
+    
+    //MARK: - Sensor Discovery
     
     private var discoveryList: [BLEDeviceData] = []
     private var discoveredUserSensors: [UserSensorResponse] = []
@@ -91,33 +93,80 @@ class SensorListViewModel: NSObject, ObservableObject {
         }
     }
     
+    //MARK: Manual Entry
+    @Published var manualTempReading: String = ""
+    @Published var probeLocation: String = ""
+    @Published var notes: String = ""
+    
+    @Published var manualAlertMessageTitle = ""
+    @Published var manualAlertMessage = ""
+    @Published var showManualAlert = false
+    
+    var isManualEntryValid: Bool {
+        return isTempValid() && !probeLocation.isEmpty && !notes.isEmpty
+    }
+    var tempPrompt: String {
+        if isTempValid() {
+            return ""
+        } else {
+            return "Temperature is not valid. Must be between -150 and 150"
+        }
+    }
+    
+    private func isTempValid() -> Bool {
+        guard let floatLevel = Float(String(format: "%.2f", manualTempReading)) else {
+            return false
+        }
+        let levelTest = NSPredicate(format: "SELF MATCHES %@",
+                                    "^(?:-([0-9]|[1-4][0-9]|50)|([0-9]|[1-9][0-9]|1[0-4][0-9]|150))$")
+        return levelTest.evaluate(with: manualTempReading)
+    }
+    
+    var probePrompt: String {
+        if probeLocation.isEmpty {
+            return "Please enter the location of the probe for the reading."
+        }
+        return ""
+    }
+    
+    var notesPrompt: String {
+        if notes.isEmpty {
+            return "Please enter some notes for the reading."
+        }
+        return ""
+    }
+    
     func submitManualReading(sensor: UserSensorResponse, tempReading: String, probedLocation: String, readingNotes: String, token: String) {
-        let manualReadingSubmission = ManualReadingSubmission(sensorPhysicalId: sensor.physicalId, manualReadTemperature: 10.0, manualReadDate: Date().toString(dateFormat: "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"), manualReadLocation: probedLocation, manualReadNote: readingNotes, manualReadLatitude: "", manualReadLongitude: "")
+        guard let floatTemp = Float(String(format: "%.2f", tempReading)) else {
+            DispatchQueue.main.async {
+                self.manualAlertMessageTitle = "Submission error"
+                self.manualAlertMessage = "Temperature is not valid. Must be between -150 and 150 and a number"
+                self.showManualAlert = true
+            }
+            return
+        }
+        let manualReadingSubmission = ManualReadingSubmission(sensorPhysicalId: sensor.physicalId, manualReadTemperature: floatTemp, manualReadDate: Date().toString(dateFormat: "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"), manualReadLocation: probedLocation, manualReadNote: readingNotes, manualReadLatitude: "", manualReadLongitude: "")
         self.service.submitManualAlertReading(token: token, manualReading: manualReadingSubmission, session: URLSession.shared)
             .subscribe(on: DispatchQueue.global(qos: .background))
             .sink { res  in
                 switch res {
                     case .failure(let error):
                     DispatchQueue.main.async {
-                        self.alertMessageTitle = "Submission error"
-                        self.alertMessage = error.localizedDescription
-                        self.showAlert = true
+                        self.manualAlertMessageTitle = "Submission error"
+                        self.manualAlertMessage = error.localizedDescription
+                        self.showManualAlert = true
                     }
                     case .finished:
                         break
                 }
             } receiveValue: { response in
-                DispatchQueue.main.async {
-                    self.alertMessageTitle = "Submission Complete"
-                    self.alertMessage = "Submission has been successful"
-                    self.showAlert = true
-                }
+                //DispatchQueue.main.async {
+                    self.manualAlertMessageTitle = "Submission Complete"
+                    self.manualAlertMessage = "Submission has been successful"
+                    self.showManualAlert = true
+                //}
             }
             .store(in: &cancellables)
-    }
-    
-    private func validateManualTempReading() {
-        
     }
     
 }
