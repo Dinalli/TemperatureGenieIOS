@@ -17,6 +17,7 @@ class SensorListViewModel: NSObject, ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     
     @Published var filteredSensors: [UserSensorResponse] = []
+    @Published var lastTemperatureSample: Int16 = -999
     @Published var isLoading: Bool = false
     @Published var alertMessageTitle = ""
     @Published var alertMessage = ""
@@ -26,6 +27,7 @@ class SensorListViewModel: NSObject, ObservableObject {
     
     private var discoveryList: [BLEDeviceData] = []
     private var discoveredUserSensors: [UserSensorResponse] = []
+    private var temperatureSamples: [Int16] = []
     
     func setUpManager()  {
         centralManager = CBCentralManager(delegate: self, queue: nil)
@@ -74,11 +76,12 @@ class SensorListViewModel: NSObject, ObservableObject {
     }
     
     private func updateFilteredSensors() {
-       // val filteredSensors = discoveredSensors.flatMap { sensorId -> userSensors.filter { sensorId == it.physicalId }}
-       // filteredSensors = discoveryList.flatMap { $0.sensorId -> discoveryList.filter { sensorId == $0.physicalId }}
-        
-    // Come back to this as filtered live sensors doesnt have info needed yet
-        filteredSensors = discoveredUserSensors
+        if AuthenticationHelper().isAlertModeOnly() {
+            filteredSensors = discoveredUserSensors
+            return
+        }
+        let foundDeviceNames = Set(discoveryList.map { $0.peripheral.name })
+        filteredSensors = discoveredUserSensors.filter { foundDeviceNames.contains($0.serialNumber)}
     }
     
     func isSensorInPausedState(sensor: UserSensorResponse) -> Bool {
@@ -169,6 +172,60 @@ class SensorListViewModel: NSObject, ObservableObject {
             .store(in: &cancellables)
     }
     
+    
+    func getLastTempReadingForSensors(sensor: UserSensorResponse) async {
+        // Get the actual live sensor from the discovery List.
+        guard let liveSensor = getBLEDEviceSensorForUserResponseSensor(sensor: sensor) else { print("Could not find sensor");  return }
+        //Task {
+            do {
+                temperatureSamples = try await ZebraSdkUtilities.readSamplesOffline(peripheral: liveSensor.peripheral, size: 100, offset: 0)
+                await MainActor.run {
+                    lastTemperatureSample = temperatureSamples.first ?? -999
+                }
+            } catch let error as ZebraIllegalArgumentException {
+                print("Error fetching samples \(error.localizedDescription)")
+            } catch let error as ZebraBluetoothLeException {
+                print("Error fetching samples Bluetooth exception \(error.localizedDescription)")
+            } catch {
+                print("Error fetching samples \(error.localizedDescription)")
+            }
+        //}
+    }
+    
+    func getDeviceStatus(sensor: UserSensorResponse)-> String {
+        guard let liveSensor = getBLEDEviceSensorForUserResponseSensor(sensor: sensor) else { print("Could not find sensor");  return "" }
+//        if (liveSensor.advertisementData. == CBPeripheralState.connected) {
+//                return "Not present"
+//            } else if (deviceStatus == 1) {
+//                return "Stopped"
+//            } else if (deviceStatus == 2) {
+//                return "Started"
+//            } else {
+//                return "not found"
+//            }
+        return ""
+    }
+    
+    func getAdvertismentData(advertisementData: [String : Any]) -> String {
+        guard let manufacturerData = advertisementData[CBAdvertisementDataManufacturerDataKey] as? Data else {
+            print("Could not find advertismentData");  return ""
+        }
+        do {
+            // Initialize AdvertisingInfo with the manufacturer data
+            let advertisingInfo = try ZebraSdkUtilities.getAdvertisingInfo(data: manufacturerData)
+            return advertisingInfo.description
+        } catch let error as ZebraIllegalArgumentException {
+            print("Error fetching advertisment Data \(error.localizedDescription)")
+        } catch {
+            print("Error fetching advertisment Data \(error.localizedDescription)")
+        }
+        return ""
+    }
+    
+    func getBLEDEviceSensorForUserResponseSensor(sensor: UserSensorResponse) -> BLEDeviceData? {
+        return discoveryList.filter { $0.peripheral.name == sensor.serialNumber }.first
+    }
+    
 }
 
 extension SensorListViewModel: CBCentralManagerDelegate {
@@ -186,7 +243,8 @@ extension SensorListViewModel: CBCentralManagerDelegate {
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         if (peripheral.name ?? "Unknown Device").contains("ZS300") {
-            let discovery = BLEDeviceData(peripheral: peripheral, advertisementData: BLEAdvertisementData(from: advertisementData))
+            let advertisingData = getAdvertismentData(advertisementData: advertisementData)
+            let discovery = BLEDeviceData(peripheral: peripheral, advertisementData: advertisingData)
             if !discoveryList.contains(where: { item in
                 return item.peripheral.identifier == peripheral.identifier
             }) {
@@ -194,8 +252,8 @@ extension SensorListViewModel: CBCentralManagerDelegate {
                 print("Advertisement Data \(discovery.advertisementData)")
                 discoveryList.append(discovery)
             }
+            updateFilteredSensors()
         }
-        updateFilteredSensors()
     }
 }
 

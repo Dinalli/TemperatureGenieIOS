@@ -21,7 +21,7 @@ struct SensorList: View {
                             DiscoveredSensorRow(sensor: sensor, viewModel: viewModel)
                                 .listRowInsets(.init(top: 10, leading: 10, bottom: 10, trailing: 10))
                                 .overlay(
-                                    NavigationLink(destination: ManualAlert(sensor: sensor, viewModel: viewModel)) {
+                                    NavigationLink(destination: LiveSensorDetail(sensor: sensor, viewModel: viewModel)) {
                                         EmptyView()
                                     }.opacity(0)
                                 )
@@ -81,6 +81,24 @@ struct SensorList: View {
             viewModel.getDiscoveredSensors()
             viewModel.getUserSensors(token: authenticationHelper.getAccessToken())
             locationHelper.checkLocationState()
+        }
+    }
+    
+    func getDestinationForNavigation(sensor: UserSensorResponse, viewModel: SensorListViewModel) -> some View {
+        AnyView {
+            if AuthenticationHelper().isAlertModeOnly() {
+                if sensor.inAlarmState {
+                    //                                            uiState.update { state ->
+                    //                                                state.copy(alertSensorID = discoveredSensor.sensorId.toString())
+                    //                                            }
+                    //                                            navigateToAlertAlarmReadingSubmission()
+                    ManualAlert(sensor: sensor, viewModel: viewModel)
+                } else {
+                    ManualAlert(sensor: sensor, viewModel: viewModel)
+                }
+            } else {
+                LiveSensorDetail(sensor: sensor, viewModel: viewModel)
+            }
         }
     }
 }

@@ -32,6 +32,7 @@ public class AuthenticationHelper: NSObject, ObservableObject {
             print("Error saving tokens to  keychain - \(error)")
         }
         UserDefaultsHelper.shared.addToUserDefaults(key: "expiration", value: login.expiration)
+        UserDefaultsHelper.shared.addToUserDefaults(key: "alertModeOnly", value: login.alertOnlyMode)
         saveTokenCreationTime()
     }
 
@@ -62,6 +63,7 @@ public class AuthenticationHelper: NSObject, ObservableObject {
         }
         UserDefaultsHelper.shared.removeFromUserDefaults(key: "expiration")
         UserDefaultsHelper.shared.removeFromUserDefaults(key: "tokenCreationDate")
+        UserDefaultsHelper.shared.removeFromUserDefaults(key: "alertModeOnly")
         isAuthenticated = false
     }
 
@@ -91,6 +93,10 @@ public class AuthenticationHelper: NSObject, ObservableObject {
     func logout() {
         clearToken()
         isAuthenticated = false
+    }
+    
+    func isAlertModeOnly() -> Bool {
+        return UserDefaults.standard.bool(forKey: "alertModeOnly")
     }
 }
 

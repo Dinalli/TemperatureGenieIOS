@@ -64,9 +64,9 @@ public struct  PauseAlarmSubmission: Codable {
 }
 
 struct BLEDeviceData : Hashable {
-    var _id = UUID();
-    let peripheral: CBPeripheral;
-    let advertisementData: BLEAdvertisementData;
+    var _id = UUID()
+    var peripheral: CBPeripheral
+    let advertisementData: String
 }
 
 struct BLEAdvertisementData : Hashable {
