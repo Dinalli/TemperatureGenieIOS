@@ -98,20 +98,6 @@ struct LiveSensorDetail: View {
                         bottom: 5,
                         trailing: 10
                     ))
-                    HStack{
-                        Text("MAC Address: ")
-                            .font(.custom("poppins_medium", size: 17))
-                            .foregroundColor(Color("GenieBlue"))
-                        Text(sensor.active ? "ACTIVE" : "")
-                            .font(.custom("poppins_medium", size: 17))
-                            .foregroundColor(Color("GenieBlue"))
-                        Spacer()
-                    }.padding(EdgeInsets(
-                        top: 5,
-                        leading: 10,
-                        bottom: 5,
-                        trailing: 10
-                    ))
                 }
                 Button {
                     print("Submit reading")

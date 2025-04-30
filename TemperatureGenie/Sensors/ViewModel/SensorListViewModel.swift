@@ -180,7 +180,8 @@ class SensorListViewModel: NSObject, ObservableObject {
             do {
                 temperatureSamples = try await ZebraSdkUtilities.readSamplesOffline(peripheral: liveSensor.peripheral, size: 100, offset: 0)
                 await MainActor.run {
-                    lastTemperatureSample = temperatureSamples.first ?? -999
+                    guard let lastSample = temperatureSamples.last else { return }
+                    lastTemperatureSample = lastSample / 100
                 }
             } catch let error as ZebraIllegalArgumentException {
                 print("Error fetching samples \(error.localizedDescription)")
@@ -194,15 +195,15 @@ class SensorListViewModel: NSObject, ObservableObject {
     
     func getDeviceStatus(sensor: UserSensorResponse)-> String {
         guard let liveSensor = getBLEDEviceSensorForUserResponseSensor(sensor: sensor) else { print("Could not find sensor");  return "" }
-//        if (liveSensor.advertisementData. == CBPeripheralState.connected) {
-//                return "Not present"
-//            } else if (deviceStatus == 1) {
-//                return "Stopped"
-//            } else if (deviceStatus == 2) {
-//                return "Started"
-//            } else {
-//                return "not found"
-//            }
+        if (liveSensor.advertisementData == CBPeripheralState.connected) {
+                return "Not present"
+            } else if (deviceStatus == 1) {
+                return "Stopped"
+            } else if (deviceStatus == 2) {
+                return "Started"
+            } else {
+                return "not found"
+            }
         return ""
     }
     
@@ -213,6 +214,7 @@ class SensorListViewModel: NSObject, ObservableObject {
         do {
             // Initialize AdvertisingInfo with the manufacturer data
             let advertisingInfo = try ZebraSdkUtilities.getAdvertisingInfo(data: manufacturerData)
+            print(advertisingInfo)
             return advertisingInfo.description
         } catch let error as ZebraIllegalArgumentException {
             print("Error fetching advertisment Data \(error.localizedDescription)")
