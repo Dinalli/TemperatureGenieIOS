@@ -41,7 +41,6 @@ struct LoginAPI {
                     return Fail(error: .unknown)
                         .eraseToAnyPublisher()
                 }
-                print(String(data: data, encoding: .utf8))
                 if (200...299).contains(response.statusCode) {
                     if let response = try? jsonDecoder.decode(LoginToken.self, from: data) {
                         return Just(response).setFailureType(to: APIError.self)

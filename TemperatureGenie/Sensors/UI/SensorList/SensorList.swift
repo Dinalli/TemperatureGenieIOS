@@ -13,49 +13,38 @@ struct SensorList: View {
     @StateObject var viewModel: SensorListViewModel = SensorListViewModel()
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 VStack {
-                    List {
-                        ForEach(viewModel.filteredSensors, id: \.sensorId) { sensor in
+                    ScrollView(.vertical) {
+                        ForEach(viewModel.filteredSensors) { sensor in
                             DiscoveredSensorRow(sensor: sensor, viewModel: viewModel)
-                                .listRowInsets(.init(top: 10, leading: 10, bottom: 10, trailing: 10))
-                                .overlay(
-                                    NavigationLink(destination: LiveSensorDetail(sensor: sensor, viewModel: viewModel)) {
-                                        EmptyView()
-                                    }.opacity(0)
-                                )
-                        }.listRowBackground(
-                            RoundedRectangle(cornerRadius: 5)
-                                .background(.clear)
-                                .foregroundColor(.clear)
-                        )
-                        .listRowSeparator(.hidden)
+                        }
+                        .padding()
                     }
-                    .listStyle(.plain)
                     .refreshable {
                         viewModel.getUserSensors(token: authenticationHelper.getAccessToken())
                     }
-                }
-                .toolbarBackground(.orange, for: .navigationBar, .tabBar)
-                .toolbar {
-                    ToolbarItem(placement: .principal) {
-                        Image("TempGenieLogo").resizable().frame(width: 232, height: 30, alignment: .center)
-                    }
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button {
-                            authenticationHelper.logout()
-                        } label: {
-                            Text("Logout").padding().font(.custom("poppins_medium", size: 12))
-                                .foregroundColor(Color.white)
-                        }
-                        .frame(maxWidth: 100, minHeight: 44)
-                        .background(Color("GenieLightBlue"))
-                        .cornerRadius(8)
-                    }
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        LiveIndicator(fillColor: .constant(.red))
-                    }
+//                    List {
+//                        ForEach(viewModel.filteredSensors, id: \.sensorId) { sensor in
+//                            DiscoveredSensorRow(sensor: sensor, viewModel: viewModel)
+//                                .listRowInsets(.init(top: 10, leading: 10, bottom: 10, trailing: 10))
+//                                .overlay(
+//                                    NavigationLink(destination: LiveSensorDetail(sensor: sensor, viewModel: viewModel)) {
+//                                        EmptyView()
+//                                    }.opacity(0)
+//                                )
+//                        }.listRowBackground(
+//                            RoundedRectangle(cornerRadius: 5)
+//                                .background(.clear)
+//                                .foregroundColor(.clear)
+//                        )
+//                        .listRowSeparator(.hidden)
+//                    }
+//                    .listStyle(.plain)
+//                    .refreshable {
+//                        viewModel.getUserSensors(token: authenticationHelper.getAccessToken())
+//                    }
                 }
             }
             .background(Color("GenieBoxBackground"))
@@ -66,6 +55,38 @@ struct SensorList: View {
             .font(.custom("poppins_medium", size: 17))
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbarBackground(Color.white, for: .navigationBar)
+            .navigationDestination(for: Route.self) { route in
+                switch route {
+                case let .liveSensor(sensor):
+                    LiveSensorDetail(sensor: sensor, viewModel: viewModel)
+                case let .manualSensor(sensor):
+                    ManualAlert(sensor: sensor, viewModel: viewModel)
+                case let .pauseSensor(sensor):
+                    PauseAlert(sensor: sensor, viewModel: viewModel)
+                case let .alertSensor(sensor):
+                    AlarmAlert(sensor: sensor, viewModel: viewModel)
+                }
+            }
+//            .toolbarBackground(.orange, for: .navigationBar, .tabBar)
+//            .toolbar {
+//                ToolbarItem(placement: .principal) {
+//                    Image("TempGenieLogo").resizable().frame(width: 232, height: 30, alignment: .center)
+//                }
+//                ToolbarItem(placement: .navigationBarTrailing) {
+//                    Button {
+//                        authenticationHelper.logout()
+//                    } label: {
+//                        Text("Logout").padding().font(.custom("poppins_medium", size: 12))
+//                            .foregroundColor(Color.white)
+//                    }
+//                    .frame(maxWidth: 100, minHeight: 44)
+//                    .background(Color("GenieLightBlue"))
+//                    .cornerRadius(8)
+//                }
+//                ToolbarItem(placement: .navigationBarLeading) {
+//                    LiveIndicator(fillColor: .constant(.red))
+//                }
+//            }
         }
         .alert(viewModel.alertMessageTitle, isPresented: $viewModel.showAlert) {
             Button("OK") {
@@ -81,24 +102,6 @@ struct SensorList: View {
             viewModel.getDiscoveredSensors()
             viewModel.getUserSensors(token: authenticationHelper.getAccessToken())
             locationHelper.checkLocationState()
-        }
-    }
-    
-    func getDestinationForNavigation(sensor: UserSensorResponse, viewModel: SensorListViewModel) -> some View {
-        AnyView {
-            if AuthenticationHelper().isAlertModeOnly() {
-                if sensor.inAlarmState {
-                    //                                            uiState.update { state ->
-                    //                                                state.copy(alertSensorID = discoveredSensor.sensorId.toString())
-                    //                                            }
-                    //                                            navigateToAlertAlarmReadingSubmission()
-                    ManualAlert(sensor: sensor, viewModel: viewModel)
-                } else {
-                    ManualAlert(sensor: sensor, viewModel: viewModel)
-                }
-            } else {
-                LiveSensorDetail(sensor: sensor, viewModel: viewModel)
-            }
         }
     }
 }

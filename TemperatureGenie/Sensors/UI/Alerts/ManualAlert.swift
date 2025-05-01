@@ -40,7 +40,6 @@ struct ManualAlert: View {
                 }.padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 10))
                 Button {
                     viewModel.submitManualReading(sensor: sensor, tempReading: viewModel.manualTempReading, probedLocation: viewModel.probeLocation, readingNotes: viewModel.notes, token: authenticationHelper.getAccessToken())
-                    print("Submit reading")
                 } label: {
                     Text("Submit alert reading").font(.custom("poppins_medium", size: 17))
                         .frame(maxWidth: .infinity, minHeight: 44)

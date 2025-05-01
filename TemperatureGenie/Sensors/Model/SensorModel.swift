@@ -7,6 +7,13 @@
 import Foundation
 import CoreBluetooth
 
+enum Route: Hashable {
+    case liveSensor(UserSensorResponse)
+    case manualSensor(UserSensorResponse)
+    case alertSensor(UserSensorResponse)
+    case pauseSensor(UserSensorResponse)
+}
+
 public struct BasicResponseObject: Codable {
     public let success: Bool
     public let errorMessage: String?
@@ -20,7 +27,8 @@ public struct ManualEntryErrorResponseObject: Codable {
     public let  errors: listOfErrors
 }
 
-public struct UserSensorResponse: Codable {
+public struct UserSensorResponse: Codable, Hashable, Identifiable {
+    public var id: Int { sensorId }
     public let sensorId: Int
     public let description: String
     public let serialNumber: String

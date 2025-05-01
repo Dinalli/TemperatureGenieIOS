@@ -195,16 +195,14 @@ class SensorListViewModel: NSObject, ObservableObject {
     
     func getDeviceStatus(sensor: UserSensorResponse)-> String {
         guard let liveSensor = getBLEDEviceSensorForUserResponseSensor(sensor: sensor) else { print("Could not find sensor");  return "" }
-        if (liveSensor.advertisementData == CBPeripheralState.connected) {
-                return "Not present"
-            } else if (deviceStatus == 1) {
-                return "Stopped"
-            } else if (deviceStatus == 2) {
-                return "Started"
-            } else {
-                return "not found"
-            }
-        return ""
+        switch liveSensor.peripheral.state {
+        case .connected:
+            return "Connected"
+        case .disconnected:
+            return "Disconnected"
+        default:
+            return "Unknown"
+        }
     }
     
     func getAdvertismentData(advertisementData: [String : Any]) -> String {
@@ -214,7 +212,6 @@ class SensorListViewModel: NSObject, ObservableObject {
         do {
             // Initialize AdvertisingInfo with the manufacturer data
             let advertisingInfo = try ZebraSdkUtilities.getAdvertisingInfo(data: manufacturerData)
-            print(advertisingInfo)
             return advertisingInfo.description
         } catch let error as ZebraIllegalArgumentException {
             print("Error fetching advertisment Data \(error.localizedDescription)")

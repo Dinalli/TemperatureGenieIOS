@@ -100,7 +100,7 @@ struct LiveSensorDetail: View {
                     ))
                 }
                 Button {
-                    print("Submit reading")
+                    
                 } label: {
                     Text("Submit live reading").font(.custom("poppins_medium", size: 17))
                         .frame(maxWidth: .infinity, minHeight: 44)
