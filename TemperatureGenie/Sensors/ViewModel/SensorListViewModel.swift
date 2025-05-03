@@ -173,6 +173,84 @@ class SensorListViewModel: NSObject, ObservableObject {
     }
     
     
+    
+    //MARK: Pause Entry
+    @Published var reasonForPause: String = ""
+    @Published var actionedBy: String = ""
+    @Published var duration: String = ""
+    
+    @Published var pauseAlertMessageTitle = ""
+    @Published var pauseAlertMessage = ""
+    @Published var showPauseAlert = false
+    
+    var isPauseEntryValid: Bool {
+        return isDurationValid() && !actionedBy.isEmpty && !reasonForPause.isEmpty
+    }
+    
+    var durationPrompt: String {
+        if isDurationValid() {
+            return ""
+        } else {
+            return "Please enter a value for pause duration 0-12 hours"
+        }
+    }
+    
+    private func isDurationValid() -> Bool {
+        guard let intDuration = Int(duration) else {
+            return false
+        }
+        let durationTest = NSPredicate(format: "SELF MATCHES %@",
+                                    "^([0-9]|1[0-2])$")
+        return durationTest.evaluate(with: duration)
+    }
+    
+    var reasonPrompt: String {
+        if reasonForPause.isEmpty {
+            return "Enter the reason for pausing the alert."
+        }
+        return ""
+    }
+    
+    var actionedPrompt: String {
+        if actionedBy.isEmpty {
+            return "Enter who this was actioned by"
+        }
+        return ""
+    }
+    
+    func submitPauseAlert(sensor: UserSensorResponse, tempReading: String, probedLocation: String, readingNotes: String, token: String) {
+        guard let intDuration: Int = Int(duration) else {
+            DispatchQueue.main.async {
+                self.pauseAlertMessageTitle = "Submission error"
+                self.pauseAlertMessage = "Please enter a value for pause duration 0-12 hours"
+                self.showPauseAlert = true
+            }
+            return
+        }
+        let pauseSubmission = PauseAlarmSubmission(sensorId: String("\(sensor.sensorId)"), reason: reasonForPause, actionedBy: actionedBy, pauseHours: intDuration)
+        self.service.submitPauseForSenson(token: token, pauseSubmission: pauseSubmission, session: URLSession.shared)
+            .subscribe(on: DispatchQueue.global(qos: .background))
+            .sink { res  in
+                switch res {
+                    case .failure(let error):
+                    DispatchQueue.main.async {
+                        self.pauseAlertMessageTitle = "Submission error"
+                        self.pauseAlertMessage = error.localizedDescription
+                        self.showPauseAlert = true
+                    }
+                    case .finished:
+                        break
+                }
+            } receiveValue: { response in
+                //DispatchQueue.main.async {
+                    self.pauseAlertMessageTitle = "Submission Complete"
+                    self.pauseAlertMessage = "Submission has been successful"
+                    self.showPauseAlert = true
+                //}
+            }
+            .store(in: &cancellables)
+    }
+    
     func getLastTempReadingForSensors(sensor: UserSensorResponse) async {
         // Get the actual live sensor from the discovery List.
         guard let liveSensor = getBLEDEviceSensorForUserResponseSensor(sensor: sensor) else { print("Could not find sensor");  return }

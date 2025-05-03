@@ -14,7 +14,58 @@ struct PauseAlert: View {
     @StateObject var viewModel: SensorListViewModel
     
     var body: some View {
-        Text("Pause")
+        ZStack {
+            Color(Color("GenieBoxBackground")).ignoresSafeArea(.all)
+            VStack {
+                VStack {
+                    HStack {
+                        Text("Reason for pause :").font(.custom("poppins_medium", size: 12)).foregroundColor(Color("GenieBlue"))
+                        Spacer()
+                    }
+                    ValidationTextField(placeHolderText: "Enter the reason for pausing the alert", promptText: viewModel.reasonPrompt, fieldValue: $viewModel.reasonForPause)
+                }.padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 10))
+                VStack {
+                    HStack {
+                        Text("Actioned by:").font(.custom("poppins_medium", size: 12)).foregroundColor(Color("GenieBlue"))
+                        Spacer()
+                    }
+                    ValidationTextField(placeHolderText: "Enter who this was actioned by", promptText: viewModel.actionedPrompt, fieldValue: $viewModel.actionedBy)
+                }.padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 10))
+                VStack {
+                    HStack {
+                        Text("Pause duration:").font(.custom("poppins_medium", size: 12)).foregroundColor(Color("GenieBlue"))
+                        Spacer()
+                    }
+                    ValidationTextField(placeHolderText: "Please enter value for pause duration 0-12 hours", promptText: viewModel.durationPrompt, fieldValue: $viewModel.duration, isNumeric: true)
+                }.padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 10))
+                Button {
+                    viewModel.submitPauseAlert(sensor: sensor, tempReading: viewModel.manualTempReading, probedLocation: viewModel.probeLocation, readingNotes: viewModel.notes, token: authenticationHelper.getAccessToken())
+                } label: {
+                    Text("Submit pause alert").font(.custom("poppins_medium", size: 17))
+                        .frame(maxWidth: .infinity, minHeight: 44)
+                        .background(Color("GenieLightBlue"))
+                        .cornerRadius(8)
+                        .foregroundColor(Color.white)
+                }.disabled(!viewModel.isPauseEntryValid)
+                .opacity(viewModel.isPauseEntryValid ? 1.0 : 0.5)
+                .padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 10))
+                Spacer()
+                    .alert(viewModel.pauseAlertMessageTitle, isPresented: $viewModel.showPauseAlert) {
+                        Button("OK") {
+                            viewModel.showAlert = false
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                    } message: {
+                        Text(viewModel.pauseAlertMessage)
+                    }
+            }
+        }
+        .navigationTitle("Pause alert for sensor \(sensor.description)").foregroundStyle(Color.white)
+        .font(.custom("poppins_medium", size: 17))
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbarBackground(.visible, for: .navigationBar)
+        .toolbarBackground(Color("GenieLightBlue"), for: .navigationBar)
+        Spacer()
     }
 }
 

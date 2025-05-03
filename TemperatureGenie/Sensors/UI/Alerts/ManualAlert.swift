@@ -22,7 +22,7 @@ struct ManualAlert: View {
                         Text("Temperature Reading").font(.custom("poppins_medium", size: 12)).foregroundColor(Color("GenieBlue"))
                         Spacer()
                     }
-                    ValidationTextField(placeHolderText: "Enter temperature reading", promptText: viewModel.tempPrompt, fieldValue: $viewModel.manualTempReading)
+                    ValidationTextField(placeHolderText: "Enter temperature reading", promptText: viewModel.tempPrompt, fieldValue: $viewModel.manualTempReading, isNumeric: true)
                 }.padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 10))
                 VStack {
                     HStack {
