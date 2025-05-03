@@ -60,11 +60,16 @@ struct ManualAlert: View {
                     }
             }
         }
-        .navigationTitle("Alert action for \(sensor.description)").foregroundStyle(Color.white)
-        .font(.custom("poppins_medium", size: 17))
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(.visible, for: .navigationBar)
-        .toolbarBackground(Color("GenieLightBlue"), for: .navigationBar)
+        .toolbarBackground(Color("GenieLightBlue"), for: .navigationBar, .tabBar)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text("Alert action for \(sensor.description)")
+                    .font(.custom("poppins_medium", size: 17))
+                    .foregroundStyle(Color("GenieBoxBackground"))
+            }
+        }
         Spacer()
     }
 }

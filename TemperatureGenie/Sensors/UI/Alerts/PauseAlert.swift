@@ -60,11 +60,16 @@ struct PauseAlert: View {
                     }
             }
         }
-        .navigationTitle("Pause alert for sensor \(sensor.description)").foregroundStyle(Color.white)
-        .font(.custom("poppins_medium", size: 17))
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(.visible, for: .navigationBar)
-        .toolbarBackground(Color("GenieLightBlue"), for: .navigationBar)
+        .toolbarBackground(Color("GenieLightBlue"), for: .navigationBar, .tabBar)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text("Pause alert for sensor \(sensor.description)")
+                    .font(.custom("poppins_medium", size: 17))
+                    .foregroundStyle(Color("GenieBoxBackground"))
+            }
+        }
         Spacer()
     }
 }

@@ -60,7 +60,7 @@ struct DiscoveredSensorRow: View {
             }
             VStack {
                 NavigationLink(value: Route.pauseSensor(sensor)) {
-                    Text("Pause\n Alert").padding().font(.custom("poppins_medium", size: 12))
+                    Text("Pause Alert").padding().font(.custom("poppins_medium", size: 12))
                         .foregroundColor(Color.white)
                 }
                 .frame(maxWidth: 100, minHeight: 44, alignment: .trailing)

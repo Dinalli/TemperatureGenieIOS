@@ -100,9 +100,9 @@ struct LiveSensorDetail: View {
                     ))
                 }
                 Button {
-                    
+                    viewModel.submitManualReading(sensor: sensor, tempReading: sensor.lastTemperatureReading, probedLocation: "Live reading from the App", readingNotes: "live reading from App", token: authenticationHelper.getAccessToken())
                 } label: {
-                    Text("Submit live reading").font(.custom("poppins_medium", size: 17))
+                    Text("Send live reading").font(.custom("poppins_medium", size: 17))
                         .frame(maxWidth: .infinity, minHeight: 44)
                         .background(Color("GenieLightBlue"))
                         .cornerRadius(8)
@@ -128,6 +128,16 @@ struct LiveSensorDetail: View {
         .onAppear {
             Task {
                 await viewModel.getLastTempReadingForSensors(sensor: sensor)
+            }
+        }
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbarBackground(.visible, for: .navigationBar)
+        .toolbarBackground(Color("GenieLightBlue"), for: .navigationBar, .tabBar)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text("Alert action for \(sensor.description)")
+                    .font(.custom("poppins_medium", size: 17))
+                    .foregroundStyle(Color("GenieBoxBackground"))
             }
         }
     }
