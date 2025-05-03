@@ -251,6 +251,41 @@ class SensorListViewModel: NSObject, ObservableObject {
             .store(in: &cancellables)
     }
     
+    //MARK: alert alarm submission
+    
+    func submitAlertReading(sensor: UserSensorResponse, tempReading: String, probedLocation: String, readingNotes: String, token: String) {
+        guard let floatTemp = Float(String(format: "%.2f", tempReading)) else {
+            DispatchQueue.main.async {
+                self.manualAlertMessageTitle = "Submission error"
+                self.manualAlertMessage = "Temperature is not valid. Must be between -150 and 150 and a number"
+                self.showManualAlert = true
+            }
+            return
+        }
+        let alertReadingSubmission = AlertAlarmReadingSubmission(sensorId: String("\(sensor.sensorId)"), temperatureReading: floatTemp, temperatureReadingLocation: probedLocation, temperatureReadingNotes: readingNotes, temperatureReadingDate: Date().toString(dateFormat: "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"), manualReadLatitude: "", manualReadLongitude: "")
+        self.service.submitAlertAlarm(token: token, alertAlarmReadingSubmission: alertReadingSubmission, session: URLSession.shared)
+            .subscribe(on: DispatchQueue.global(qos: .background))
+            .sink { res  in
+                switch res {
+                    case .failure(let error):
+                    DispatchQueue.main.async {
+                        self.manualAlertMessageTitle = "Submission error"
+                        self.manualAlertMessage = error.localizedDescription
+                        self.showManualAlert = true
+                    }
+                    case .finished:
+                        break
+                }
+            } receiveValue: { response in
+                //DispatchQueue.main.async {
+                    self.manualAlertMessageTitle = "Submission Complete"
+                    self.manualAlertMessage = "Submission has been successful"
+                    self.showManualAlert = true
+                //}
+            }
+            .store(in: &cancellables)
+    }
+    
     func getLastTempReadingForSensors(sensor: UserSensorResponse) async {
         // Get the actual live sensor from the discovery List.
         guard let liveSensor = getBLEDEviceSensorForUserResponseSensor(sensor: sensor) else { print("Could not find sensor");  return }

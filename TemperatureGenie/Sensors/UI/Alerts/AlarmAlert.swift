@@ -14,7 +14,63 @@ struct AlarmAlert: View {
     @StateObject var viewModel: SensorListViewModel
     
     var body: some View {
-        Text("Alarm")
+        ZStack {
+            Color(Color("GenieBoxBackground")).ignoresSafeArea(.all)
+            VStack {
+                VStack {
+                    HStack {
+                        Text("Temperature Reading").font(.custom("poppins_medium", size: 12)).foregroundColor(Color("GenieBlue"))
+                        Spacer()
+                    }
+                    ValidationTextField(placeHolderText: "Enter temperature reading", promptText: viewModel.tempPrompt, fieldValue: $viewModel.manualTempReading, isNumeric: true)
+                }.padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 10))
+                VStack {
+                    HStack {
+                        Text("Product type probed").font(.custom("poppins_medium", size: 12)).foregroundColor(Color("GenieBlue"))
+                        Spacer()
+                    }
+                    ValidationTextField(placeHolderText: "Enter product type probed", promptText: viewModel.probePrompt, fieldValue: $viewModel.probeLocation)
+                }.padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 10))
+                VStack {
+                    HStack {
+                        Text("Notes").font(.custom("poppins_medium", size: 12)).foregroundColor(Color("GenieBlue"))
+                        Spacer()
+                    }
+                    ValidationTextField(placeHolderText: "Enter any notes", promptText: viewModel.notesPrompt, fieldValue: $viewModel.notes)
+                }.padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 10))
+                Button {
+                    viewModel.submitAlertReading(sensor: sensor, tempReading: viewModel.manualTempReading, probedLocation: viewModel.probeLocation, readingNotes: viewModel.notes, token: authenticationHelper.getAccessToken())
+                } label: {
+                    Text("Submit alert reading").font(.custom("poppins_medium", size: 17))
+                        .frame(maxWidth: .infinity, minHeight: 44)
+                        .background(Color("GenieLightBlue"))
+                        .cornerRadius(8)
+                        .foregroundColor(Color.white)
+                }.disabled(!viewModel.isManualEntryValid)
+                .opacity(viewModel.isManualEntryValid ? 1.0 : 0.5)
+                .padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 10))
+                Spacer()
+                    .alert(viewModel.manualAlertMessageTitle, isPresented: $viewModel.showManualAlert) {
+                        Button("OK") {
+                            viewModel.showAlert = false
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                    } message: {
+                        Text(viewModel.manualAlertMessage)
+                    }
+            }
+        }
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbarBackground(.visible, for: .navigationBar)
+        .toolbarBackground(Color("GenieLightBlue"), for: .navigationBar, .tabBar)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text("Alert action for \(sensor.description)")
+                    .font(.custom("poppins_medium", size: 17))
+                    .foregroundStyle(Color("GenieBoxBackground"))
+            }
+        }
+        Spacer()
     }
 }
 
